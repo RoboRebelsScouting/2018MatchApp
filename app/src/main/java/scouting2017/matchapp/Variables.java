@@ -1,47 +1,23 @@
 package scouting2017.matchapp;
 
 import android.app.Activity;
-import android.bluetooth.BluetoothA2dp;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
-import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
-import android.provider.MediaStore;
-import android.provider.Settings;
-import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
-
-import static scouting2017.matchapp.R.id.numberOfGearsPlacedText;
-import static scouting2017.matchapp.R.id.numberOfGroundBalls;
-import static scouting2017.matchapp.R.id.numberOfGroundGears;
-import static scouting2017.matchapp.R.id.numberOfHighGoalsAuto;
-import static scouting2017.matchapp.R.id.numberOfHopperBalls;
-import static scouting2017.matchapp.R.id.numberOfHoppersDumped;
-import static scouting2017.matchapp.R.id.numberOfHoppersDumpedText;
-import static scouting2017.matchapp.R.id.numberOfHumanGears;
 
 /**
  * Created by mcgrathg19 on 1/18/2017.
@@ -50,8 +26,10 @@ import static scouting2017.matchapp.R.id.numberOfHumanGears;
 public class Variables {
 
     //public Intent firstActivity;
-    public int numberGearsPlacedAuto;
-    public int numberDroppedGearsAuto;
+    public int numberCubesSwitchPlacedAuto;
+    public int numberOfCubesSwitch;
+    public int numberCubesScale;
+    //public int numberCubesSwitchPlacedTeleop;
     public int numberHighGoalsAuto;
     public int numberHoppersDumpedAuto;
     public int numberHumanGears;
@@ -61,6 +39,15 @@ public class Variables {
     public int numberHopperBalls;
     public int numberHoppersDumpedTeleop;
     public int crossBaselineAuto;
+    public int foulAuto;
+    public int numberCubesSwitchPlacedTeleop;
+    public int numberCubesDroppedAuto;
+    public int numberCubesOpponentSwitchPlacedTeleop;
+    public int numberCubesScaleTeleop;
+    public int numberCubesVault;
+    public int numberCubesHuman;
+    public int numberCubesDroppedTeleop;
+    public int numberCubesFromGround;
     public List<GameEvent> eventList;
     public long startAutoTime;
     public long autoTime;
@@ -225,8 +212,8 @@ public class Variables {
     }
 
     public void reset() {
-        numberGearsPlacedAuto = 0;
-        numberDroppedGearsAuto = 0;
+        numberCubesSwitchPlacedAuto = 0;
+        numberOfCubesSwitch = 0;
         numberHighGoalsAuto = 0;
         numberHoppersDumpedAuto = 0;
         numberHumanGears = 0;

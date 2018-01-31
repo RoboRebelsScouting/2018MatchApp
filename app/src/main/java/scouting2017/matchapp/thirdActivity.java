@@ -7,9 +7,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
+import static scouting2017.matchapp.FirstActivity.myAppVariables;
 
 public class thirdActivity extends AppCompatActivity {
     public Handler teleopTimer = new Handler();
@@ -39,10 +38,10 @@ public class thirdActivity extends AppCompatActivity {
         }
         teleopTimer.postDelayed(updateTimer, 1000);
         //toggleGoal();
-        ImageButton hopperDumpedTeleop = (ImageButton)findViewById(R.id.hopperDumpedTeleop);
-        TextView numberOfHighGoalsTeleop = (TextView) findViewById(R.id.numberOfHighGoalsTeleop);
+        //ImageButton hopperDumpedTeleop = (ImageButton)findViewById(R.id.hopperDumpedTeleop);
+        //TextView numberOfHighGoalsTeleop = (TextView) findViewById(R.id.numberOfHighGoalsTeleop);
         FirstActivity.myAppVariables.numberHighGoalsTeleop = FirstActivity.myAppVariables.numberHighGoalsAuto;
-        numberOfHighGoalsTeleop.setText (String.valueOf(FirstActivity.myAppVariables.numberHighGoalsTeleop));
+        //numberOfHighGoalsTeleop.setText (String.valueOf(FirstActivity.myAppVariables.numberHighGoalsTeleop));
 
     }
 
@@ -75,312 +74,179 @@ public class thirdActivity extends AppCompatActivity {
             }
         }
     };
-    public void toggleAll () {
-        ImageButton hopperDumpedTeleop = (ImageButton)findViewById(R.id.hopperDumpedTeleop);
-        if (!hopperDumpedTeleop.isEnabled()) {
-            hopperDumpedTeleop.setAlpha(0.5f);
-        } else {
-            hopperDumpedTeleop.setAlpha(1.0f);
-        }
-        ImageButton ballsPickedUpHopper = (ImageButton)findViewById(R.id.ballsPickedUpHopper);
-        ballsPickedUpHopper.setEnabled (!ballsPickedUpHopper.isEnabled());
-        if (!ballsPickedUpHopper.isEnabled()){
-            ballsPickedUpHopper.setAlpha(0.5f);
-        }else{
-            ballsPickedUpHopper.setAlpha(1.0f);
-        }
-        ImageButton gearPickedUpGround = (ImageButton)findViewById(R.id.gearPickedUpGround);
-        gearPickedUpGround.setEnabled (!gearPickedUpGround.isEnabled());
-        if (!gearPickedUpGround.isEnabled()){
-            gearPickedUpGround.setAlpha(0.5f);
-        }else{
-            gearPickedUpGround.setAlpha(1.0f);
-        }
-        ImageButton gearPickedUpHuman = (ImageButton)findViewById(R.id.gearPickedUpHuman);
-        gearPickedUpHuman.setEnabled (!gearPickedUpHuman.isEnabled());
-        if (!gearPickedUpHuman.isEnabled()){
-            gearPickedUpHuman.setAlpha(0.5f);
-        }else{
-            gearPickedUpHuman.setAlpha(1.0f);
-        }
-        ImageButton droppedGearTeleop = (ImageButton)findViewById(R.id.droppedGearTeleop);
-        droppedGearTeleop.setEnabled (!droppedGearTeleop.isEnabled());
-        if (!droppedGearTeleop.isEnabled()){
-            droppedGearTeleop.setAlpha(0.5f);
-        }else{
-            droppedGearTeleop.setAlpha(1.0f);
-        }
-        ImageButton gearPlacedTeleop = (ImageButton)findViewById(R.id.gearPlacedTeleop);
-        gearPlacedTeleop.setEnabled (!gearPlacedTeleop.isEnabled());
-        if (!gearPlacedTeleop.isEnabled()){
-            gearPlacedTeleop.setAlpha(0.5f);
-        }else{
-            gearPlacedTeleop.setAlpha(1.0f);
-        }
-        Button minusHopper = (Button)findViewById(R.id.minusHopper);
-        minusHopper.setEnabled (!minusHopper.isEnabled());
-        if (!minusHopper.isEnabled()){
-            minusHopper.setAlpha(0.5f);
-        }else{
-            minusHopper.setAlpha(1.0f);
-        }
-        Button minusHopperBalls = (Button)findViewById(R.id.minusHopperBalls);
-        minusHopperBalls.setEnabled (!minusHopperBalls.isEnabled());
-        if (!minusHopperBalls.isEnabled()){
-            minusHopperBalls.setAlpha(0.5f);
-        }else{
-            minusHopperBalls.setAlpha(1.0f);
-        }
-        Button minusGroundGear = (Button)findViewById(R.id.minusGroundGear);
-        minusGroundGear.setEnabled (!minusGroundGear.isEnabled());
-        if (!minusGroundGear.isEnabled()){
-            minusGroundGear.setAlpha(0.5f);
-        }else{
-            minusGroundGear.setAlpha(1.0f);
-        }
-        Button minusHumanGear = (Button)findViewById(R.id.minusHumanGear);
-        minusHumanGear.setEnabled (!minusHumanGear.isEnabled());
-        if (!minusHumanGear.isEnabled()){
-            minusHumanGear.setAlpha(0.5f);
-        }else{
-            minusHumanGear.setAlpha(1.0f);
-        }
-        Button minusDroppedGearTeleop = (Button)findViewById(R.id.minusDroppedGearTeleop);
-        minusDroppedGearTeleop.setEnabled (!minusDroppedGearTeleop.isEnabled());
-        if (!minusDroppedGearTeleop.isEnabled()){
-            minusDroppedGearTeleop.setAlpha(0.5f);
-        }else{
-            minusDroppedGearTeleop.setAlpha(1.0f);
-        }
-        Button minusGearPlacedTeleop = (Button)findViewById(R.id.minusGearPlacedTeleop);
-        minusGearPlacedTeleop.setEnabled (!minusGearPlacedTeleop.isEnabled());
-        if (!minusGearPlacedTeleop.isEnabled()){
-            minusGearPlacedTeleop.setAlpha(0.5f);
-        }else{
-            minusGearPlacedTeleop.setAlpha(1.0f);
-        }
-        Button submitButton = (Button)findViewById(R.id.submitOldButton);
-        submitButton.setEnabled (!submitButton.isEnabled());
-        if (!submitButton.isEnabled()){
-            submitButton.setAlpha(0.5f);
-        }else{
-            submitButton.setAlpha(1.0f);
-        }
+
+    public void cubesPlacedSwitchTeleop(View view) {
+        myAppVariables.numberCubesSwitchPlacedTeleop++;
+        TextView numberOfCubesSwitch = (TextView) findViewById(R.id.numberOfCubesSwitchTeleop);
+        numberOfCubesSwitch.setText(Integer.toString(myAppVariables.numberCubesSwitchPlacedTeleop));
+        GameEvent cubeSwitchPlacedTeleop = new GameEvent();
+        cubeSwitchPlacedTeleop.eventType = "cubeSwitchPlacedTeleop";
+        cubeSwitchPlacedTeleop.eventValue = "1";
+        cubeSwitchPlacedTeleop.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(cubeSwitchPlacedTeleop);
     }
 
-    public void toggleGoal () {
-        Button zeroHighGoal = (Button)findViewById(R.id.zeroHighGoal);
-        zeroHighGoal.setEnabled (!zeroHighGoal.isEnabled());
-        if (!zeroHighGoal.isEnabled()){
-            zeroHighGoal.setAlpha(0.5f);
-        }else{
-            zeroHighGoal.setAlpha(1.0f);
-        }
-        Button oneHighGoal = (Button)findViewById(R.id.oneHighGoal);
-        oneHighGoal.setEnabled (!oneHighGoal.isEnabled());
-        if (!oneHighGoal.isEnabled()){
-            oneHighGoal.setAlpha(0.5f);
-        }else{
-            oneHighGoal.setAlpha(1.0f);
-        }
-        Button fiveHighGoal = (Button)findViewById(R.id.fiveHighGoal);
-        fiveHighGoal.setEnabled (!fiveHighGoal.isEnabled());
-        if (!fiveHighGoal.isEnabled()){
-            fiveHighGoal.setAlpha(0.5f);
-        }else{
-            fiveHighGoal.setAlpha(1.0f);
-        }
-        Button tenHighGoal = (Button)findViewById(R.id.tenHighGoal);
-        tenHighGoal.setEnabled (!tenHighGoal.isEnabled());
-        if (!tenHighGoal.isEnabled()){
-            tenHighGoal.setAlpha(0.5f);
-        }else{
-            tenHighGoal.setAlpha(1.0f);
-        }
-        Button minusHighGoalTeleop = (Button)findViewById(R.id.minusHighGoalTeleop);
-        minusHighGoalTeleop.setEnabled (!minusHighGoalTeleop.isEnabled());
-        if (!minusHighGoalTeleop.isEnabled()){
-            minusHighGoalTeleop.setAlpha(0.5f);
-        }else{
-            minusHighGoalTeleop.setAlpha(1.0f);
-        }
+    public void cubesPlacedOpponentSwitchTeleop(View view) {
+        myAppVariables.numberCubesOpponentSwitchPlacedTeleop++;
+        TextView numberOfCubesOpponentSwitch = (TextView) findViewById(R.id.numberOfCubesOpponentSwitchTeleop);
+        numberOfCubesOpponentSwitch.setText(Integer.toString(myAppVariables.numberCubesOpponentSwitchPlacedTeleop));
+        GameEvent cubeOpponentSwitchPlacedTeleop = new GameEvent();
+        cubeOpponentSwitchPlacedTeleop.eventType = "cubeOpponentSwitchPlacedTeleop";
+        cubeOpponentSwitchPlacedTeleop.eventValue = "1";
+        cubeOpponentSwitchPlacedTeleop.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(cubeOpponentSwitchPlacedTeleop);
+
     }
 
-    public void humanGearPickedUp(View view) {
-        FirstActivity.myAppVariables.numberHumanGears++;
-        TextView numberOfHumanGears = (TextView) findViewById(R.id.numberOfHumanGears);
-        numberOfHumanGears.setText(Integer.toString(FirstActivity.myAppVariables.numberHumanGears));
-        GameEvent humanGearPickedUpTeleop = new GameEvent();
-        humanGearPickedUpTeleop.eventType = "humanGearPickedUp";
-        humanGearPickedUpTeleop.eventValue = "1";
-        humanGearPickedUpTeleop.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(humanGearPickedUpTeleop);
+    public void cubesPlacedScaleTeleop(View view) {
+        myAppVariables.numberCubesScaleTeleop++;
+        TextView numberOfCubesScale = (TextView) findViewById(R.id.numberOfCubesScaleTeleop);
+        numberOfCubesScale.setText(Integer.toString(myAppVariables.numberCubesScaleTeleop));
+        GameEvent cubesScalePlacedTeleop = new GameEvent();
+        cubesScalePlacedTeleop.eventType = "cubesScalePlacedTeleop";
+        cubesScalePlacedTeleop.eventValue = "1";
+        cubesScalePlacedTeleop.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(cubesScalePlacedTeleop);
+
     }
 
-    public void groundGearPickedUp(View view) {
-        FirstActivity.myAppVariables.numberGroundGears++;
-        TextView numberOfGroundGears = (TextView) findViewById(R.id.numberOfGroundGears);
-        numberOfGroundGears.setText(Integer.toString(FirstActivity.myAppVariables.numberGroundGears));
-        GameEvent groundGearPickedUpTeleop = new GameEvent();
-        groundGearPickedUpTeleop.eventType = "groundGearPickedUp";
-        groundGearPickedUpTeleop.eventValue = "1";
-        groundGearPickedUpTeleop.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(groundGearPickedUpTeleop);
+    public void cubesPlacedVault(View view) {
+        myAppVariables.numberCubesVault++;
+        TextView numberOfCubesVault = (TextView) findViewById(R.id.numberOfCubesVault);
+        numberOfCubesVault.setText(Integer.toString(myAppVariables.numberCubesVault));
+        GameEvent cubesPlacedVault = new GameEvent();
+        cubesPlacedVault.eventType = "cubesPlacedVault";
+        cubesPlacedVault.eventValue = "1";
+        cubesPlacedVault.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(cubesPlacedVault);
     }
 
-    public void hopperBalls(View view) {
-        FirstActivity.myAppVariables.numberHopperBalls++;
-        TextView numberOfHopperBalls = (TextView) findViewById(R.id.numberOfHopperBalls);
-        numberOfHopperBalls.setText(Integer.toString(FirstActivity.myAppVariables.numberHopperBalls));
-        GameEvent hopperBallsTeleop = new GameEvent();
-        hopperBallsTeleop.eventType = "hopperBalls";
-        hopperBallsTeleop.eventValue = "1";
-        hopperBallsTeleop.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(hopperBallsTeleop);
+    public void cubesFromHuman(View view) {
+        myAppVariables.numberCubesHuman++;
+        TextView numberOfCubesHuman = (TextView) findViewById(R.id.numberOfCubesHuman);
+        numberOfCubesHuman.setText(Integer.toString(myAppVariables.numberCubesHuman));
+        GameEvent cubesFromHuman = new GameEvent();
+        cubesFromHuman.eventType = "cubesFromHuman";
+        cubesFromHuman.eventValue = "1";
+        cubesFromHuman.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(cubesFromHuman);
     }
 
-    public void hopperDumpedTeleop(View view) {
-        if (FirstActivity.myAppVariables.numberHoppersDumpedTeleop < 5) {
-            FirstActivity.myAppVariables.numberHoppersDumpedTeleop++;
-        } else {
-            return;
+    public void cubesDroppedTeleop(View view) {
+        myAppVariables.numberCubesDroppedTeleop++;
+        TextView numberOfCubesDroppedTeleop = (TextView) findViewById(R.id.numberOfCubesDroppedTeleop);
+        numberOfCubesDroppedTeleop.setText(Integer.toString(myAppVariables.numberCubesDroppedTeleop));
+        GameEvent cubesDroppedTeleop = new GameEvent();
+        cubesDroppedTeleop.eventType = "cubesDroppedTeleop";
+        cubesDroppedTeleop.eventValue = "1";
+        cubesDroppedTeleop.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(cubesDroppedTeleop);
+    }
+
+    public void cubesPickedupGround(View view) {
+        myAppVariables.numberCubesFromGround++;
+        TextView numberOfCubesGround = (TextView) findViewById(R.id.numberOfCubesGround);
+        numberOfCubesGround.setText(Integer.toString(myAppVariables.numberCubesFromGround));
+        GameEvent cubesFromGround = new GameEvent();
+        cubesFromGround.eventType = "cubesPickedupFromGround";
+        cubesFromGround.eventValue = "1";
+        cubesFromGround.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(cubesFromGround);
+    }
+
+
+
+    public void minusCubesSwitchTeleop(View view) {
+        if (FirstActivity.myAppVariables.numberCubesSwitchPlacedTeleop > 0) {
+            FirstActivity.myAppVariables.numberCubesSwitchPlacedTeleop--;
         }
-        TextView numberOfHoppersDumped = (TextView) findViewById(R.id.numberOfHoppersDumped);
-        numberOfHoppersDumped.setText(Integer.toString(FirstActivity.myAppVariables.numberHoppersDumpedTeleop));
-        GameEvent hopperDumpedTeleop = new GameEvent();
-        hopperDumpedTeleop.eventType = "hopperDumpedTeleop";
-        hopperDumpedTeleop.eventValue = "1";
-        hopperDumpedTeleop.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(hopperDumpedTeleop);
+        TextView numberOfCubesSwitchDropped = (TextView) findViewById(R.id.numberOfCubesSwitchTeleop);
+        numberOfCubesSwitchDropped.setText(Integer.toString(FirstActivity.myAppVariables.numberCubesSwitchPlacedTeleop));
+        GameEvent minusCubesSwitchDropped = new GameEvent();
+        minusCubesSwitchDropped.eventType = "cubesDroppedSwitchTeleop";
+        minusCubesSwitchDropped.eventValue = "-1";
+        minusCubesSwitchDropped.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(minusCubesSwitchDropped);
     }
 
-    public void gearPlacedTeleop(View view) {
-        FirstActivity.myAppVariables.numberGearsPlaced++;
-        TextView numberOfGearsPlaced = (TextView) findViewById(R.id.numberOfGearsPlaced);
-        numberOfGearsPlaced.setText(Integer.toString(FirstActivity.myAppVariables.numberGearsPlaced));
-        GameEvent gearPlacedTeleop = new GameEvent();
-        gearPlacedTeleop.eventType = "gearPlacedTeleop";
-        gearPlacedTeleop.eventValue = "1";
-        gearPlacedTeleop.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(gearPlacedTeleop);
-    }
-
-    public void droppedGearTeleop(View view) {
-        FirstActivity.myAppVariables.numberDroppedGears++;
-        TextView numberOfDroppedGears = (TextView) findViewById(R.id.numberOfGearsDropped);
-        numberOfDroppedGears.setText(Integer.toString(FirstActivity.myAppVariables.numberDroppedGears));
-        GameEvent droppedGearTeleop = new GameEvent();
-        droppedGearTeleop.eventType = "droppedGearTeleop";
-        droppedGearTeleop.eventValue = "1";
-        droppedGearTeleop.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(droppedGearTeleop);
-    }
-
-    public void highGoal(View view) {
-        //this is the button
-        TextView highGoalText = (TextView) findViewById(view.getId());
-        TextView numberOfHighGoalsTeleop = (TextView) findViewById(R.id.numberOfHighGoalsTeleop);
-        Integer highGoalButtonValue = FirstActivity.myAppVariables.numberHighGoalsAuto;
-        if (!highGoalText.getText().toString().equalsIgnoreCase("X")) {
-            highGoalButtonValue = Integer.parseInt(highGoalText.getText().toString());
+    public void minusCubesOpponentSwitchTeleop(View view) {
+        if(FirstActivity.myAppVariables.numberCubesOpponentSwitchPlacedTeleop > 0) {
+            FirstActivity.myAppVariables.numberCubesOpponentSwitchPlacedTeleop--;
         }
-        FirstActivity.myAppVariables.numberHighGoalsTeleop += highGoalButtonValue;
-        numberOfHighGoalsTeleop.setText(Integer.toString(FirstActivity.myAppVariables.numberHighGoalsTeleop));
-        //GameEvent highGoal = new GameEvent();
-        //highGoal.eventType = "highGoal";
-       // highGoal.eventValue = highGoalButtonValue.toString();
-       // highGoal.eventTime = System.currentTimeMillis();
-       // FirstActivity.myAppVariables.eventList.add(highGoal);
+        TextView numberOfCubesOpponentSwitchDropped = (TextView) findViewById(R.id.numberOfCubesOpponentSwitchTeleop);
+        numberOfCubesOpponentSwitchDropped.setText(Integer.toString(FirstActivity.myAppVariables.numberCubesOpponentSwitchPlacedTeleop));
+        GameEvent minusCubesOpponentSwitchDropped = new GameEvent();
+        minusCubesOpponentSwitchDropped.eventType = "cubesDroppedOpponentSwitchTeleop";
+        minusCubesOpponentSwitchDropped.eventValue = "-1";
+        minusCubesOpponentSwitchDropped.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(minusCubesOpponentSwitchDropped);
+
     }
 
-    public void minusHighGoalTeleop(View view) {
-        if (FirstActivity.myAppVariables.numberHighGoalsTeleop > 0) {
-            FirstActivity.myAppVariables.numberHighGoalsTeleop--;
+    public void minusCubesScaleTeleop(View view) {
+        if(FirstActivity.myAppVariables.numberCubesScaleTeleop > 0) {
+            FirstActivity.myAppVariables.numberCubesScaleTeleop--;
         }
-        TextView numberOfHighGoalsTeleop = (TextView) findViewById(R.id.numberOfHighGoalsTeleop);
-        numberOfHighGoalsTeleop.setText(Integer.toString(FirstActivity.myAppVariables.numberHighGoalsTeleop));
-        GameEvent minusHighGoalsTeleop = new GameEvent();
-        minusHighGoalsTeleop.eventType = "highGoalsTeleop";
-        minusHighGoalsTeleop.eventValue = "-1";
-        minusHighGoalsTeleop.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(minusHighGoalsTeleop);
+        TextView numberOfCubesScaleDropped = (TextView) findViewById(R.id.numberOfCubesScaleTeleop);
+        numberOfCubesScaleDropped.setText(Integer.toString(FirstActivity.myAppVariables.numberCubesScaleTeleop));
+        GameEvent minusCubesScaleDropped = new GameEvent();
+        minusCubesScaleDropped.eventType = "cubesDroppedScaleTeleop";
+        minusCubesScaleDropped.eventValue = "-1";
+        minusCubesScaleDropped.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(minusCubesScaleDropped);
+
     }
 
-    public void minusGroundGear(View view) {
-        if (FirstActivity.myAppVariables.numberGroundGears > 0) {
-            FirstActivity.myAppVariables.numberGroundGears--;
+    public void minusCubesVault(View view) {
+        if(FirstActivity.myAppVariables.numberCubesVault > 0) {
+            FirstActivity.myAppVariables.numberCubesVault--;
         }
-        TextView numberOfGroundGears = (TextView) findViewById(R.id.numberOfGroundGears);
-        numberOfGroundGears.setText(Integer.toString(FirstActivity.myAppVariables.numberGroundGears));
-        GameEvent minusGroundGear = new GameEvent();
-        minusGroundGear.eventType = "groundGearPickedUp";
-        minusGroundGear.eventValue = "-1";
-        minusGroundGear.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(minusGroundGear);
+        TextView numberOfCubesVaultDropped = (TextView) findViewById(R.id.numberOfCubesVault);
+        numberOfCubesVaultDropped.setText(Integer.toString(FirstActivity.myAppVariables.numberCubesVault));
+        GameEvent minusCubesVault = new GameEvent();
+        minusCubesVault.eventType = "cubesDroppedVault";
+        minusCubesVault.eventValue = "-1";
+        minusCubesVault.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(minusCubesVault);
+
+        }
+
+    public void minusCubesHuman(View view) {
+        if(FirstActivity.myAppVariables.numberCubesHuman > 0) {
+            FirstActivity.myAppVariables.numberCubesHuman--;
+        }
+        TextView numberOfCubesHumanDropped = (TextView) findViewById(R.id.numberOfCubesHuman);
+        numberOfCubesHumanDropped.setText(Integer.toString(FirstActivity.myAppVariables.numberCubesHuman));
+        GameEvent minusCubesHuman = new GameEvent();
+        minusCubesHuman.eventType = "cubesDroppedHuman";
+        minusCubesHuman.eventValue = "-1";
+        minusCubesHuman.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(minusCubesHuman);
     }
 
-    public void minusHumanGear(View view) {
-        if (FirstActivity.myAppVariables.numberHumanGears > 0) {
-            FirstActivity.myAppVariables.numberHumanGears--;
+    public void minusCubesDroppedTeleop(View view) {
+        if(FirstActivity.myAppVariables.numberCubesDroppedTeleop > 0) {
+            FirstActivity.myAppVariables.numberCubesDroppedTeleop--;
         }
-        TextView numberOfHumanGears = (TextView) findViewById(R.id.numberOfHumanGears);
-        numberOfHumanGears.setText(Integer.toString(FirstActivity.myAppVariables.numberHumanGears));
-        GameEvent minusHumanGear = new GameEvent();
-        minusHumanGear.eventType = "humanGearPickedUp";
-        minusHumanGear.eventValue = "-1";
-        minusHumanGear.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(minusHumanGear);
+        TextView numberOfCubesDroppedTeleop = (TextView) findViewById(R.id.numberOfCubesDroppedTeleop);
+        numberOfCubesDroppedTeleop.setText(Integer.toString(FirstActivity.myAppVariables.numberCubesDroppedTeleop));
+        GameEvent minusCubesDroppedTeleop = new GameEvent();
+        minusCubesDroppedTeleop.eventType = "cubesDroppedTeleop";
+        minusCubesDroppedTeleop.eventValue = "-1";
+        minusCubesDroppedTeleop.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(minusCubesDroppedTeleop);
     }
 
-    public void minusGearPlacedTeleop(View view) {
-        if (FirstActivity.myAppVariables.numberGearsPlaced > 0) {
-            FirstActivity.myAppVariables.numberGearsPlaced--;
+    public void minusCubesGround(View view) {
+        if(FirstActivity.myAppVariables.numberCubesFromGround > 0) {
+            FirstActivity.myAppVariables.numberCubesFromGround--;
         }
-        TextView numberOfGearsPlaced = (TextView) findViewById(R.id.numberOfGearsPlaced);
-        numberOfGearsPlaced.setText(Integer.toString(FirstActivity.myAppVariables.numberGearsPlaced));
-        GameEvent minusGearPlacedTeleop = new GameEvent();
-        minusGearPlacedTeleop.eventType = "gearPlacedTeleop";
-        minusGearPlacedTeleop.eventValue = "-1";
-        minusGearPlacedTeleop.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(minusGearPlacedTeleop);
+        TextView numberOfCubesFromGround = (TextView) findViewById(R.id.numberOfCubesGround);
+        numberOfCubesFromGround.setText(Integer.toString(FirstActivity.myAppVariables.numberCubesFromGround));
+        GameEvent minusCubesFromGround = new GameEvent();
+        minusCubesFromGround.eventType = "cubesDroppedGround";
+        minusCubesFromGround.eventValue = "-1";
+        minusCubesFromGround.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(minusCubesFromGround);   
     }
-
-    public void minusDroppedGearTeleop(View view) {
-        if (FirstActivity.myAppVariables.numberDroppedGears > 0) {
-            FirstActivity.myAppVariables.numberDroppedGears--;
-        }
-        TextView numberOfGearsDropped = (TextView) findViewById(R.id.numberOfGearsDropped);
-        numberOfGearsDropped.setText(Integer.toString(FirstActivity.myAppVariables.numberDroppedGears));
-        GameEvent minusDroppedGearTeleop = new GameEvent();
-        minusDroppedGearTeleop.eventType = "droppedGearTeleop";
-        minusDroppedGearTeleop.eventValue = "-1";
-        minusDroppedGearTeleop.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(minusDroppedGearTeleop);
     }
-
-    public void minusHopperTeleop(View view) {
-        if (FirstActivity.myAppVariables.numberHoppersDumpedTeleop > 0) {
-            FirstActivity.myAppVariables.numberHoppersDumpedTeleop--;
-        }
-        TextView numberOfHoppersDumped = (TextView) findViewById(R.id.numberOfHoppersDumped);
-        numberOfHoppersDumped.setText(Integer.toString(FirstActivity.myAppVariables.numberHoppersDumpedTeleop));
-        GameEvent minusHopperTeleop = new GameEvent();
-        minusHopperTeleop.eventType = "hopperDumpedTeleop";
-        minusHopperTeleop.eventValue = "-1";
-        minusHopperTeleop.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(minusHopperTeleop);
-    }
-
-    public void minusHopperBalls(View view) {
-        if (FirstActivity.myAppVariables.numberHopperBalls > 0) {
-            FirstActivity.myAppVariables.numberHopperBalls--;
-        }
-        TextView numberOfHopperBalls = (TextView) findViewById(R.id.numberOfHopperBalls);
-        numberOfHopperBalls.setText(Integer.toString(FirstActivity.myAppVariables.numberHopperBalls));
-        GameEvent minusHopperBalls = new GameEvent();
-        minusHopperBalls.eventType = "hopperBalls";
-        minusHopperBalls.eventValue = "-1";
-        minusHopperBalls.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(minusHopperBalls);
-    }
-}

@@ -4,18 +4,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.TimeFormatException;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.Chronometer;
 import android.widget.TextView;
 
 import static scouting2017.matchapp.FirstActivity.myAppVariables;
-import static scouting2017.matchapp.R.id.crossBaselineAuto;
 
 
 public class secondActivity extends AppCompatActivity {
@@ -70,109 +64,134 @@ public class secondActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void gearPlaced(View view) {
-        myAppVariables.numberGearsPlacedAuto++;
-        TextView numberOfGearsPlacedText = (TextView) findViewById(R.id.numberOfGearsPlacedText);
-        numberOfGearsPlacedText.setText(Integer.toString(myAppVariables.numberGearsPlacedAuto));
-        GameEvent gearPlacedAuto = new GameEvent();
-        gearPlacedAuto.eventType = "gearPlacedAuto";
-        gearPlacedAuto.eventValue = "1";
-        gearPlacedAuto.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(gearPlacedAuto);
+    public void cubesPlacedSwitch(View view) {
+        myAppVariables.numberCubesSwitchPlacedAuto++;
+        TextView numberOfCubesSwitch = (TextView) findViewById(R.id.numberOfCubesSwitchTeleop);
+        numberOfCubesSwitch.setText(Integer.toString(myAppVariables.numberCubesSwitchPlacedAuto));
+        GameEvent cubeSwitchPlacedAuto = new GameEvent();
+        cubeSwitchPlacedAuto.eventType = "cubeSwitchPlacedAuto";
+        cubeSwitchPlacedAuto.eventValue = "1";
+        cubeSwitchPlacedAuto.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(cubeSwitchPlacedAuto);
     }
 
-    public void droppedGear(View view) {
-        myAppVariables.numberDroppedGearsAuto++;
-        TextView numberOfDroppedGearsText = (TextView) findViewById(R.id.numberOfDroppedGearsText);
-        numberOfDroppedGearsText.setText(Integer.toString(myAppVariables.numberDroppedGearsAuto));
-        GameEvent droppedGearAuto = new GameEvent();
-        droppedGearAuto.eventType = "droppedGearAuto";
-        droppedGearAuto.eventValue = "1";
-        droppedGearAuto.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(droppedGearAuto);
+    public void cubesPlacedScale(View view) {
+        myAppVariables.numberCubesScale++;
+        TextView numberOfCubesScale = (TextView) findViewById(R.id.numberOfCubesScaleTeleop);
+        numberOfCubesScale.setText(Integer.toString(myAppVariables.numberCubesScale));
+        GameEvent cubesScalePlacedAuto = new GameEvent();
+        cubesScalePlacedAuto.eventType = "cubesScalePlacedAuto";
+        cubesScalePlacedAuto.eventValue = "1";
+        cubesScalePlacedAuto.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(cubesScalePlacedAuto);
     }
 
-    public void highGoalAuto(View view) {
-        TextView numberOfHighGoalsText = (TextView) findViewById(view.getId());
-        TextView numberOfHighGoalsAuto = (TextView) findViewById(R.id.numberOfHighGoalsAuto);
-        Integer highGoalAutoButtonValue = 0;
-        if (!numberOfHighGoalsText.getText().toString().equalsIgnoreCase("X")) {
-            highGoalAutoButtonValue = Integer.parseInt(numberOfHighGoalsText.getText().toString());
+//    public void highGoalAuto(View view) {
+//        TextView numberOfHighGoalsText = (TextView) findViewById(view.getId());
+//        TextView numberOfHighGoalsAuto = (TextView) findViewById(R.id.numberOfHighGoalsAuto);
+//        Integer highGoalAutoButtonValue = 0;
+//        if (!numberOfHighGoalsText.getText().toString().equalsIgnoreCase("X")) {
+//            highGoalAutoButtonValue = Integer.parseInt(numberOfHighGoalsText.getText().toString());
+//        }
+//        myAppVariables.numberHighGoalsAuto += highGoalAutoButtonValue;
+//        numberOfHighGoalsAuto.setText(Integer.toString(myAppVariables.numberHighGoalsAuto));
+//        //GameEvent highGoalAuto = new GameEvent();
+//        //highGoalAuto.eventType = "highGoalAuto";
+//        //highGoalAuto.eventValue = highGoalAutoButtonValue.toString();
+//        //highGoalAuto.eventTime = System.currentTimeMillis();
+//        //myAppVariables.eventList.add(highGoalAuto);
+//    }
+
+//    public void hopperDumpedAuto(View view) {
+//        if (myAppVariables.numberHoppersDumpedAuto < 5) {
+//            myAppVariables.numberHoppersDumpedAuto++;
+//        } else {
+//            return;
+//        }
+//        TextView numberOfHoppersDumpedText = (TextView) findViewById(R.id.numberOfCubesDropped);
+//        numberOfHoppersDumpedText.setText(Integer.toString(myAppVariables.numberHoppersDumpedAuto));
+//        GameEvent hopperDumpedAuto = new GameEvent();
+//        hopperDumpedAuto.eventType = "hopperDumpedAuto";
+//        hopperDumpedAuto.eventValue = "1";
+//        hopperDumpedAuto.eventTime = System.currentTimeMillis();
+//        myAppVariables.eventList.add(hopperDumpedAuto);
+//    }
+
+    public void cubesDroppedAuto(View view) {
+        FirstActivity.myAppVariables.numberCubesDroppedAuto++;
+        TextView numberOfCubesDropped = (TextView) findViewById(R.id.numberOfCubesDroppedTeleop);
+        numberOfCubesDropped.setText(Integer.toString(FirstActivity.myAppVariables.numberCubesDroppedAuto));
+        GameEvent cubesDroppedAuto = new GameEvent();
+        cubesDroppedAuto.eventType = "cubesDroppedAuto";
+        cubesDroppedAuto.eventValue = "1";
+        cubesDroppedAuto.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(cubesDroppedAuto);
+
+    }
+
+//    public void minusHopperDumpedAuto(View view) {
+//        if (myAppVariables.numberHoppersDumpedAuto > 0) {
+//            myAppVariables.numberHoppersDumpedAuto--;
+//        }
+//        TextView numberOfHoppersDumpedText = (TextView) findViewById(R.id.numberOfCubesDropped);
+//        numberOfHoppersDumpedText.setText(Integer.toString(myAppVariables.numberHoppersDumpedAuto));
+//        GameEvent minusHopperDumpedAuto = new GameEvent();
+//        minusHopperDumpedAuto.eventType = "hopperDumpedAuto";
+//        minusHopperDumpedAuto.eventValue = "1";
+//        minusHopperDumpedAuto.eventTime = System.currentTimeMillis();
+//        myAppVariables.eventList.add(minusHopperDumpedAuto);
+//    }
+
+    public void minusCubesDroppedAuto(View view) {
+        if (FirstActivity.myAppVariables.numberCubesDroppedAuto > 0) {
+            FirstActivity.myAppVariables.numberCubesDroppedAuto--;
         }
-        myAppVariables.numberHighGoalsAuto += highGoalAutoButtonValue;
-        numberOfHighGoalsAuto.setText(Integer.toString(myAppVariables.numberHighGoalsAuto));
-        //GameEvent highGoalAuto = new GameEvent();
-        //highGoalAuto.eventType = "highGoalAuto";
-        //highGoalAuto.eventValue = highGoalAutoButtonValue.toString();
-        //highGoalAuto.eventTime = System.currentTimeMillis();
-        //myAppVariables.eventList.add(highGoalAuto);
+        TextView numberOfCubesDropped = (TextView) findViewById(R.id.numberOfCubesDroppedTeleop);
+        numberOfCubesDropped.setText(Integer.toString(FirstActivity.myAppVariables.numberCubesDroppedAuto));
+        GameEvent minusCubesDroppedAuto = new GameEvent();
+        minusCubesDroppedAuto.eventType = "cubesDroppedAuto";
+        minusCubesDroppedAuto.eventValue = "-1";
+        minusCubesDroppedAuto.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(minusCubesDroppedAuto);
     }
 
-    public void hopperDumpedAuto(View view) {
-        if (myAppVariables.numberHoppersDumpedAuto < 5) {
-            myAppVariables.numberHoppersDumpedAuto++;
-        } else {
-            return;
+//    public void minusHighGoalAuto(View view) {
+//        if (myAppVariables.numberHighGoalsAuto > 0) {
+//            myAppVariables.numberHighGoalsAuto--;
+//        }
+//        TextView numberOfHighGoalsText = (TextView) findViewById(R.id.numberOfHighGoalsAuto);
+//        numberOfHighGoalsText.setText(Integer.toString(myAppVariables.numberHighGoalsAuto));
+//        //GameEvent minusHighGoalAuto = new GameEvent();
+//        //minusHighGoalAuto.eventType = "highGoalAuto";
+//        //minusHighGoalAuto.eventValue = "1";
+//       // minusHighGoalAuto.eventTime = System.currentTimeMillis();
+//        //myAppVariables.eventList.add(minusHighGoalAuto);
+//    }
+
+    public void minusCubeScaleAuto(View view) {
+        if (myAppVariables.numberCubesScale > 0) {
+            myAppVariables.numberCubesScale--;
         }
-        TextView numberOfHoppersDumpedText = (TextView) findViewById(R.id.numberOfHoppersDumpedText);
-        numberOfHoppersDumpedText.setText(Integer.toString(myAppVariables.numberHoppersDumpedAuto));
-        GameEvent hopperDumpedAuto = new GameEvent();
-        hopperDumpedAuto.eventType = "hopperDumpedAuto";
-        hopperDumpedAuto.eventValue = "1";
-        hopperDumpedAuto.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(hopperDumpedAuto);
+        TextView numberOfGearsPlacedText = (TextView) findViewById(R.id.numberOfCubesScaleTeleop);
+        numberOfGearsPlacedText.setText(Integer.toString(myAppVariables.numberCubesScale));
+        GameEvent minusCubesScaleAuto = new GameEvent();
+        minusCubesScaleAuto.eventType = "cubeScalePlacedAuto";
+        minusCubesScaleAuto.eventValue = "1";
+        minusCubesScaleAuto.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(minusCubesScaleAuto);
     }
 
-    public void minusHopperDumpedAuto(View view) {
-        if (myAppVariables.numberHoppersDumpedAuto > 0) {
-            myAppVariables.numberHoppersDumpedAuto--;
+    public void minusCubeSwitchAuto(View view) {
+        if (myAppVariables.numberCubesSwitchPlacedAuto > 0) {
+            myAppVariables.numberCubesSwitchPlacedAuto--;
         }
-        TextView numberOfHoppersDumpedText = (TextView) findViewById(R.id.numberOfHoppersDumpedText);
-        numberOfHoppersDumpedText.setText(Integer.toString(myAppVariables.numberHoppersDumpedAuto));
-        GameEvent minusHopperDumpedAuto = new GameEvent();
-        minusHopperDumpedAuto.eventType = "hopperDumpedAuto";
-        minusHopperDumpedAuto.eventValue = "1";
-        minusHopperDumpedAuto.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(minusHopperDumpedAuto);
-    }
-
-    public void minusHighGoalAuto(View view) {
-        if (myAppVariables.numberHighGoalsAuto > 0) {
-            myAppVariables.numberHighGoalsAuto--;
-        }
-        TextView numberOfHighGoalsText = (TextView) findViewById(R.id.numberOfHighGoalsAuto);
-        numberOfHighGoalsText.setText(Integer.toString(myAppVariables.numberHighGoalsAuto));
-        //GameEvent minusHighGoalAuto = new GameEvent();
-        //minusHighGoalAuto.eventType = "highGoalAuto";
-        //minusHighGoalAuto.eventValue = "1";
-       // minusHighGoalAuto.eventTime = System.currentTimeMillis();
-        //myAppVariables.eventList.add(minusHighGoalAuto);
-    }
-
-    public void minusGearPlacedAuto(View view) {
-        if (myAppVariables.numberGearsPlacedAuto > 0) {
-            myAppVariables.numberGearsPlacedAuto--;
-        }
-        TextView numberOfGearsPlacedText = (TextView) findViewById(R.id.numberOfGearsPlacedText);
-        numberOfGearsPlacedText.setText(Integer.toString(myAppVariables.numberGearsPlacedAuto));
-        GameEvent minusGearPlacedAuto = new GameEvent();
-        minusGearPlacedAuto.eventType = "gearPlacedAuto";
-        minusGearPlacedAuto.eventValue = "1";
-        minusGearPlacedAuto.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(minusGearPlacedAuto);
-    }
-
-    public void minusDroppedGearAuto(View view) {
-        if (myAppVariables.numberDroppedGearsAuto > 0) {
-            myAppVariables.numberDroppedGearsAuto--;
-        }
-        TextView numberOfDroppedGearsText = (TextView) findViewById(R.id.numberOfDroppedGearsText);
-        numberOfDroppedGearsText.setText(Integer.toString(myAppVariables.numberDroppedGearsAuto));
-        GameEvent minusDroppedGearAuto = new GameEvent();
-        minusDroppedGearAuto.eventType = "droppedGearAuto";
-        minusDroppedGearAuto.eventValue = "1";
-        minusDroppedGearAuto.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(minusDroppedGearAuto);
+        TextView numberOfDroppedGearsText = (TextView) findViewById(R.id.numberOfCubesSwitchTeleop);
+        numberOfDroppedGearsText.setText(Integer.toString(myAppVariables.numberCubesSwitchPlacedAuto));
+        GameEvent minusDroppedCubeSwitchAuto = new GameEvent();
+        minusDroppedCubeSwitchAuto.eventType = "droppedCubeSwitchAuto";
+        minusDroppedCubeSwitchAuto.eventValue = "1";
+        minusDroppedCubeSwitchAuto.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(minusDroppedCubeSwitchAuto);
     }
 
     public void crossBaseline(View view) {
@@ -189,4 +208,23 @@ public class secondActivity extends AppCompatActivity {
         crossBaselineAuto.eventTime = System.currentTimeMillis();
         myAppVariables.eventList.add(crossBaselineAuto);
     }
+
+    public void foul(View view) {
+        if (myAppVariables.foulAuto < 1) {
+            myAppVariables.foulAuto++;
+        } else {
+            return;
+        }
+
+        TextView foulText = (TextView) findViewById(R.id.foulText);
+        foulText.setText("✓");
+        GameEvent foulAuto = new GameEvent();
+        foulAuto.eventType = "foulAuto";
+        foulAuto.eventValue = "1";
+        foulAuto.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(foulAuto);
+
+    }
+
+
 }
