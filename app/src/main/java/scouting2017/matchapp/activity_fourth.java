@@ -15,6 +15,7 @@ import static scouting2017.matchapp.FirstActivity.myAppVariables;
 
 public class activity_fourth extends AppCompatActivity {
 public boolean robotClimbed = false;
+public boolean robotParked = false;
 public boolean robotBroke = false;
     public boolean useBluetoothActivity = false;
     public boolean saveFileOnly = false;
@@ -68,6 +69,26 @@ public boolean robotBroke = false;
         }
 
     }
+
+    public void parked (View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+        switch(view.getId()) {
+            case R.id.parkedNo:
+                if(checked == false) {
+                    robotParked = true;
+                } else {
+
+                }
+                break;
+            case R.id.parkedYes:
+                if(checked == true) {
+                    robotParked = true;
+                }
+                break;
+
+        }
+
+    }
     public void broke (View view) {
         boolean checked = ((RadioButton) view).isChecked();
         switch(view.getId()) {
@@ -88,11 +109,11 @@ public boolean robotBroke = false;
         saveFileOnly = false;
         this.createCSV(view);
 
-        EditText editText = (EditText) findViewById(R.id.enterPenalty);
-        if(editText.getText().toString().equals("")) {
-            Toast.makeText(getApplicationContext(), "Enter number of penalties", Toast.LENGTH_LONG).show();
-            return;
-        }
+        //EditText editText = (EditText) findViewById(R.id.enterPenalty);
+//        if(editText.getText().toString().equals("")) {
+//            Toast.makeText(getApplicationContext(), "Enter number of penalties", Toast.LENGTH_LONG).show();
+//            return;
+//        }
     }
 
 
@@ -107,27 +128,35 @@ public boolean robotBroke = false;
         saveFileOnly = true;
         this.createCSV(view);
 
-        EditText editText = (EditText) findViewById(R.id.enterPenalty);
-        if(editText.getText().toString().equals("")) {
-            Toast.makeText(getApplicationContext(), "Enter number of penalties", Toast.LENGTH_LONG).show();
-            return;
-        }
+        //EditText editText = (EditText) findViewById(R.id.enterPenalty);
+//        if(editText.getText().toString().equals("")) {
+//            Toast.makeText(getApplicationContext(), "Enter number of penalties", Toast.LENGTH_LONG).show();
+//            return;
+//        }
     }
 
     public void createCSV (View view) {
         if (robotClimbed == true) {
-            GameEvent climbed = new GameEvent();
-            climbed.eventType = "climbed";
-            climbed.eventValue = "1";
-            climbed.eventTime = System.currentTimeMillis();
-            myAppVariables.eventList.add(climbed);
+            GameEvent climb = new GameEvent();
+            climb.eventType = "climb";
+            climb.eventValue = "1";
+            climb.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(climb);
         }
         if (robotBroke == true) {
-            GameEvent broken = new GameEvent();
-            broken.eventType = "broken";
-            broken.eventValue = "1";
-            broken.eventTime = System.currentTimeMillis();
-            myAppVariables.eventList.add(broken);
+            GameEvent broke = new GameEvent();
+            broke.eventType = "broke";
+            broke.eventValue = "1";
+            broke.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(broke);
+        }
+        if(robotParked = true) {
+            GameEvent park = new GameEvent();
+            park.eventType = "park";
+            park.eventValue = "1";
+            park.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(park);
+
         }
         GameEvent colorOfAlliance = new GameEvent();
         colorOfAlliance.eventType = "allianceColor";

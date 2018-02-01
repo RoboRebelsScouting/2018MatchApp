@@ -67,19 +67,6 @@
         android:layout_alignTop="@+id/numberOfCubesSwitchTeleop"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        android:id="@+id/minusCubesDroppedAuto"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/minusCubeScalePlacedAuto"
-        android:layout_alignTop="@+id/cubesDroppedAuto"
-        android:onClick="minusCubesDroppedAuto"
-        android:text="—"
-        android:textColor="?attr/actionModeSplitBackground"
-        android:textSize="18sp"
-        android:textStyle="normal|bold" />
-
     <TextView
         android:id="@+id/crossBaselineText"
         android:textStyle="normal|bold"
@@ -115,9 +102,9 @@
         android:textSize="24sp"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="normal|bold"
-        android:layout_marginBottom="20dp"
-        android:layout_above="@+id/toTeleop"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/foulAuto"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp" />
 
     <Button
         android:text="To Teleop"
@@ -136,27 +123,14 @@
         android:id="@+id/numberOfCubesSwitchTeleop"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_marginTop="21dp"
         android:onClick="cubesPlacedSwitch"
         android:text="Cubes Placed Switch"
         android:textColor="?attr/actionModeSplitBackground"
         android:textSize="28sp"
         android:textStyle="normal|bold"
         android:layout_below="@+id/autoTimerText"
-        android:layout_toEndOf="@+id/autoTimerText" />
-
-    <Button
-        android:id="@+id/cubesDroppedAuto"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:onClick="cubesDroppedAuto"
-        android:text="Cubes Dropped"
-        android:textColor="?attr/actionModeSplitBackground"
-        android:textSize="28sp"
-        android:textStyle="normal|bold"
-        android:layout_marginTop="75dp"
-        android:layout_below="@+id/cubesScalePlacedAuto"
-        android:layout_alignStart="@+id/cubesScalePlacedAuto" />
+        android:layout_toEndOf="@+id/autoTimerText"
+        android:layout_marginTop="40dp" />
 
     <Button
         android:id="@+id/cubesScalePlacedAuto"
@@ -168,34 +142,22 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="28sp"
         android:textStyle="normal|bold"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="117dp"
         android:layout_below="@+id/numberOfCubesSwitchTeleop"
         android:layout_alignStart="@+id/numberOfCubesSwitchTeleop" />
-
-    <TextView
-        android:text="0"
-        android:layout_width="50dp"
-        android:id="@+id/numberOfCubesDroppedTeleop"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="60sp"
-        android:textColor="@android:color/holo_red_dark"
-        android:textAlignment="center"
-        android:layout_height="70dp"
-        android:layout_alignTop="@+id/minusCubesDroppedAuto"
-        android:layout_alignStart="@+id/numberOfCubesScaleTeleop" />
 
     <Button
         android:id="@+id/foulAuto"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="51dp"
         android:onClick="foul"
         android:text="Foul"
         android:textColor="@color/colorPrimary"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:layout_above="@+id/crossBaselineAuto"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/cubesScalePlacedAuto"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="84dp" />
 
     <TextView
         android:id="@+id/foulText"

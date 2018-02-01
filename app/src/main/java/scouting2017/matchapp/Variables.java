@@ -31,13 +31,6 @@ public class Variables {
     public int numberCubesScale;
     //public int numberCubesSwitchPlacedTeleop;
     public int numberHighGoalsAuto;
-    public int numberHoppersDumpedAuto;
-    public int numberHumanGears;
-    public int numberGroundGears;
-    public int numberGearsPlaced;
-    public int numberDroppedGears;
-    public int numberHopperBalls;
-    public int numberHoppersDumpedTeleop;
     public int crossBaselineAuto;
     public int foulAuto;
     public int numberCubesSwitchPlacedTeleop;
@@ -54,14 +47,11 @@ public class Variables {
     public boolean timerStarted = false;
     public long startTeleopTime;
     public long teleopTime;
-    public boolean approachBoiler;
-    public boolean leaveBoiler;
     public int robotNumber;
     public boolean allianceColor = false;
     public int matchNumber;
     public String scouterName;
     public String competitionName;
-    public int droppedGearTeleop;
     public int numberHighGoalsTeleop;
     public BluetoothClient btClient;
     public boolean btClientSendOnStart = false;
@@ -214,16 +204,7 @@ public class Variables {
     public void reset() {
         numberCubesSwitchPlacedAuto = 0;
         numberOfCubesSwitch = 0;
-        numberHighGoalsAuto = 0;
-        numberHoppersDumpedAuto = 0;
-        numberHumanGears = 0;
-        numberGroundGears = 0;
-        numberGearsPlaced = 0;
-        numberDroppedGears = 0;
-        numberHopperBalls = 0;
-        numberHoppersDumpedTeleop = 0;
         crossBaselineAuto = 0;
-        droppedGearTeleop = 0;
         eventList = new ArrayList<GameEvent>();
         scouterName = "" ;
         competitionName = "" ;

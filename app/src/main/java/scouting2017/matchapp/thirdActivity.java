@@ -79,22 +79,22 @@ public class thirdActivity extends AppCompatActivity {
         myAppVariables.numberCubesSwitchPlacedTeleop++;
         TextView numberOfCubesSwitch = (TextView) findViewById(R.id.numberOfCubesSwitchTeleop);
         numberOfCubesSwitch.setText(Integer.toString(myAppVariables.numberCubesSwitchPlacedTeleop));
-        GameEvent cubeSwitchPlacedTeleop = new GameEvent();
-        cubeSwitchPlacedTeleop.eventType = "cubeSwitchPlacedTeleop";
-        cubeSwitchPlacedTeleop.eventValue = "1";
-        cubeSwitchPlacedTeleop.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(cubeSwitchPlacedTeleop);
+        GameEvent teleopAllianceSwitch = new GameEvent();
+        teleopAllianceSwitch.eventType = "teleopAllianceSwitch";
+        teleopAllianceSwitch.eventValue = "1";
+        teleopAllianceSwitch.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(teleopAllianceSwitch);
     }
 
     public void cubesPlacedOpponentSwitchTeleop(View view) {
         myAppVariables.numberCubesOpponentSwitchPlacedTeleop++;
         TextView numberOfCubesOpponentSwitch = (TextView) findViewById(R.id.numberOfCubesOpponentSwitchTeleop);
         numberOfCubesOpponentSwitch.setText(Integer.toString(myAppVariables.numberCubesOpponentSwitchPlacedTeleop));
-        GameEvent cubeOpponentSwitchPlacedTeleop = new GameEvent();
-        cubeOpponentSwitchPlacedTeleop.eventType = "cubeOpponentSwitchPlacedTeleop";
-        cubeOpponentSwitchPlacedTeleop.eventValue = "1";
-        cubeOpponentSwitchPlacedTeleop.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(cubeOpponentSwitchPlacedTeleop);
+        GameEvent opponentSwitch = new GameEvent();
+        opponentSwitch.eventType = "opponentSwitch";
+        opponentSwitch.eventValue = "1";
+        opponentSwitch.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(opponentSwitch);
 
     }
 
@@ -102,11 +102,11 @@ public class thirdActivity extends AppCompatActivity {
         myAppVariables.numberCubesScaleTeleop++;
         TextView numberOfCubesScale = (TextView) findViewById(R.id.numberOfCubesScaleTeleop);
         numberOfCubesScale.setText(Integer.toString(myAppVariables.numberCubesScaleTeleop));
-        GameEvent cubesScalePlacedTeleop = new GameEvent();
-        cubesScalePlacedTeleop.eventType = "cubesScalePlacedTeleop";
-        cubesScalePlacedTeleop.eventValue = "1";
-        cubesScalePlacedTeleop.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(cubesScalePlacedTeleop);
+        GameEvent teleopScale = new GameEvent();
+        teleopScale.eventType = "teleopScale";
+        teleopScale.eventValue = "1";
+        teleopScale.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(teleopScale);
 
     }
 
@@ -114,44 +114,44 @@ public class thirdActivity extends AppCompatActivity {
         myAppVariables.numberCubesVault++;
         TextView numberOfCubesVault = (TextView) findViewById(R.id.numberOfCubesVault);
         numberOfCubesVault.setText(Integer.toString(myAppVariables.numberCubesVault));
-        GameEvent cubesPlacedVault = new GameEvent();
-        cubesPlacedVault.eventType = "cubesPlacedVault";
-        cubesPlacedVault.eventValue = "1";
-        cubesPlacedVault.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(cubesPlacedVault);
+        GameEvent vault = new GameEvent();
+        vault.eventType = "vault";
+        vault.eventValue = "1";
+        vault.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(vault);
     }
 
     public void cubesFromHuman(View view) {
         myAppVariables.numberCubesHuman++;
         TextView numberOfCubesHuman = (TextView) findViewById(R.id.numberOfCubesHuman);
         numberOfCubesHuman.setText(Integer.toString(myAppVariables.numberCubesHuman));
-        GameEvent cubesFromHuman = new GameEvent();
-        cubesFromHuman.eventType = "cubesFromHuman";
-        cubesFromHuman.eventValue = "1";
-        cubesFromHuman.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(cubesFromHuman);
+        GameEvent humanCube = new GameEvent();
+        humanCube.eventType = "humanCube";
+        humanCube.eventValue = "1";
+        humanCube.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(humanCube);
     }
 
     public void cubesDroppedTeleop(View view) {
         myAppVariables.numberCubesDroppedTeleop++;
         TextView numberOfCubesDroppedTeleop = (TextView) findViewById(R.id.numberOfCubesDroppedTeleop);
         numberOfCubesDroppedTeleop.setText(Integer.toString(myAppVariables.numberCubesDroppedTeleop));
-        GameEvent cubesDroppedTeleop = new GameEvent();
-        cubesDroppedTeleop.eventType = "cubesDroppedTeleop";
-        cubesDroppedTeleop.eventValue = "1";
-        cubesDroppedTeleop.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(cubesDroppedTeleop);
+        GameEvent droppedCube = new GameEvent();
+        droppedCube.eventType = "droppedCube";
+        droppedCube.eventValue = "1";
+        droppedCube.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(droppedCube);
     }
 
     public void cubesPickedupGround(View view) {
         myAppVariables.numberCubesFromGround++;
         TextView numberOfCubesGround = (TextView) findViewById(R.id.numberOfCubesGround);
         numberOfCubesGround.setText(Integer.toString(myAppVariables.numberCubesFromGround));
-        GameEvent cubesFromGround = new GameEvent();
-        cubesFromGround.eventType = "cubesPickedupFromGround";
-        cubesFromGround.eventValue = "1";
-        cubesFromGround.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(cubesFromGround);
+        GameEvent groundCube = new GameEvent();
+        groundCube.eventType = "groundCube";
+        groundCube.eventValue = "1";
+        groundCube.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(groundCube);
     }
 
 
@@ -247,6 +247,6 @@ public class thirdActivity extends AppCompatActivity {
         minusCubesFromGround.eventType = "cubesDroppedGround";
         minusCubesFromGround.eventValue = "-1";
         minusCubesFromGround.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(minusCubesFromGround);   
+        FirstActivity.myAppVariables.eventList.add(minusCubesFromGround);
     }
     }

@@ -20,20 +20,20 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="60sp"
-        android:layout_below="@+id/numberOfCubesDroppedTeleop"
-        android:layout_alignStart="@+id/numberOfCubesDroppedTeleop" />
+        android:layout_alignTop="@+id/cubesFromGround"
+        android:layout_toStartOf="@+id/minusCubesDroppedTeleop" />
 
     <Button
-        android:id="@+id/button6"
-        android:layout_width="260dp"
+        android:id="@+id/minusCubesHuman"
+        android:layout_width="80dp"
         android:layout_height="70dp"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/numberOfCubesVault"
         android:onClick="minusCubesHuman"
         android:text="—"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/minusCubesVault"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/numberOfCubesDroppedTeleop"
@@ -45,7 +45,7 @@
         android:textColor="@android:color/holo_red_dark"
         android:textSize="60sp"
         android:layout_alignTop="@+id/cubesDroppedTeleop"
-        android:layout_toStartOf="@+id/button6" />
+        android:layout_toStartOf="@+id/minusCubesHuman" />
 
     <TextView
         android:id="@+id/teleopTimerText"
@@ -133,13 +133,13 @@
         android:id="@+id/minusCubesScaleTeleop"
         android:layout_width="80dp"
         android:layout_height="70dp"
-        android:layout_above="@+id/minusCubesVault"
-        android:layout_alignParentEnd="true"
         android:onClick="minusCubesScaleTeleop"
         android:text="—"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:layout_above="@+id/minusCubesVault"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:text="0"
@@ -150,9 +150,8 @@
         android:textColor="@android:color/holo_red_dark"
         android:layout_width="100dp"
         android:layout_height="70dp"
-        android:layout_alignBaseline="@+id/button6"
-        android:layout_alignBottom="@+id/button6"
-        android:layout_alignStart="@+id/numberOfCubesVault" />
+        android:layout_above="@+id/numberOfCubesDroppedTeleop"
+        android:layout_alignStart="@+id/numberOfCubesDroppedTeleop" />
 
     <TextView
         android:text="0"
@@ -166,20 +165,8 @@
         android:layout_toStartOf="@+id/minusCubesVault" />
 
     <Button
-        android:id="@+id/minusCubesHuman"
-        android:layout_width="260dp"
-        android:layout_height="70dp"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/numberOfCubesVault"
-        android:onClick="minusCubesHuman"
-        android:text="—"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        android:textStyle="normal|bold" />
-
-    <Button
         android:id="@+id/minusCubesVault"
-        android:layout_width="260dp"
+        android:layout_width="80dp"
         android:layout_height="70dp"
         android:layout_above="@+id/numberOfCubesHuman"
         android:layout_alignParentEnd="true"
@@ -268,26 +255,24 @@
         android:id="@+id/cubesHuman"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_alignStart="@+id/cubesVault"
-        android:layout_below="@+id/cubesVault"
         android:onClick="cubesFromHuman"
         android:text="Cubes From Human"
         android:textColor="@color/colorPrimary"
         android:textSize="28sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/cubesVault" />
 
     <Button
         android:id="@+id/minusCubesDroppedTeleop"
-        android:layout_width="260dp"
+        android:layout_width="80dp"
         android:layout_height="70dp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/button6"
-        android:layout_toEndOf="@+id/numberOfCubesDroppedTeleop"
         android:onClick="minusCubesDroppedTeleop"
         android:text="—"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
-        android:layout_alignStart="@+id/button6" />
+        android:layout_above="@+id/minusCubesGround"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/cubesDroppedTeleop"
@@ -305,25 +290,24 @@
         android:id="@+id/cubesFromGround"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_alignStart="@+id/cubesDroppedTeleop"
-        android:layout_below="@+id/cubesDroppedTeleop"
         android:onClick="cubesPickedupGround"
         android:text="Cubes From Ground"
         android:textColor="@color/colorPrimary"
         android:textSize="28sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/cubesDroppedTeleop"
+        android:layout_alignStart="@+id/cubesDroppedTeleop" />
 
     <Button
         android:id="@+id/minusCubesGround"
-        android:layout_width="260dp"
+        android:layout_width="80dp"
         android:layout_height="70dp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/numberOfCubesDroppedTeleop"
-        android:layout_toEndOf="@+id/numberOfCubesGround"
         android:onClick="minusCubesGround"
         android:text="—"
         android:textColor="@color/colorPrimary"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_alignTop="@+id/numberOfCubesGround"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

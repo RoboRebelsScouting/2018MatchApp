@@ -54,7 +54,7 @@ public class FirstActivity extends AppCompatActivity {
         TextView eventNameText = (TextView) findViewById(R.id.enterEvent);
         EditText scouterNameText = (EditText) findViewById(R.id.enterName);
         final EditText matchNumberText = (EditText) findViewById(R.id.enterMatch);
-        final EditText penaltyText = (EditText) findViewById(R.id.enterPenalty);
+        //final EditText penaltyText = (EditText) findViewById(R.id.enterPenalty);
 
         // whenver match number is entered manually, try to get the robot number
         matchNumberText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
