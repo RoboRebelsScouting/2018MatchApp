@@ -1,5 +1,5 @@
 package scouting2017.matchapp;
-
+//This class has the necessary methods for the teleop page
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;

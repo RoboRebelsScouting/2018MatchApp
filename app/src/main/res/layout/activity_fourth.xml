@@ -64,16 +64,16 @@
         android:layout_alignParentStart="true"
         android:id="@+id/radioGroup">
 
-            <RadioButton
-                android:text="Yes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/climbedYes"
-                android:textSize="24sp"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="normal|bold"
-                android:layout_marginLeft="185dp"
-                android:onClick="climb"/>
+        <RadioButton
+            android:id="@+id/climbedYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="185dp"
+            android:onClick="climb"
+            android:text="Yes"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:textStyle="normal|bold" />
 
         <RadioButton
             android:id="@+id/climbedNo"
@@ -140,6 +140,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/climb" />
 
+
     <RadioButton
         android:id="@+id/parkedYes"
         android:layout_width="wrap_content"
@@ -149,7 +150,8 @@
         android:text="Yes"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="parked"/>
 
     <RadioButton
         android:id="@+id/parkedNo"
@@ -160,7 +162,8 @@
         android:text="No"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="parked"/>
 
 
 </RelativeLayout>

@@ -1,5 +1,5 @@
 package scouting2017.matchapp;
-
+//This class has the necessary methods for the end game page
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -168,21 +168,21 @@ public boolean robotBroke = false;
         colorOfAlliance.eventTime = System.currentTimeMillis();
         FirstActivity.myAppVariables.eventList.add(colorOfAlliance);
 
-        for (int c = 0; c < FirstActivity.myAppVariables.numberHighGoalsAuto; c++) {
-            GameEvent highGoalAuto = new GameEvent();
-            highGoalAuto.eventType = "highGoalAuto";
-            highGoalAuto.eventValue = "1";
-            highGoalAuto.eventTime = System.currentTimeMillis();
-            FirstActivity.myAppVariables.eventList.add(highGoalAuto);
-        }
+//        for (int c = 0; c < FirstActivity.myAppVariables.numberHighGoalsAuto; c++) {
+//            GameEvent highGoalAuto = new GameEvent();
+//            highGoalAuto.eventType = "highGoalAuto";
+//            highGoalAuto.eventValue = "1";
+//            highGoalAuto.eventTime = System.currentTimeMillis();
+//            FirstActivity.myAppVariables.eventList.add(highGoalAuto);
+//        }
 
-        for (int c = 0; c < (FirstActivity.myAppVariables.numberHighGoalsTeleop - FirstActivity.myAppVariables.numberHighGoalsAuto); c++) {
-            GameEvent highGoal = new GameEvent();
-            highGoal.eventType = "highGoal";
-            highGoal.eventValue = "1";
-            highGoal.eventTime = System.currentTimeMillis();
-            FirstActivity.myAppVariables.eventList.add(highGoal);
-        }
+//        for (int c = 0; c < (FirstActivity.myAppVariables.numberHighGoalsTeleop - FirstActivity.myAppVariables.numberHighGoalsAuto); c++) {
+//            GameEvent highGoal = new GameEvent();
+//            highGoal.eventType = "highGoal";
+//            highGoal.eventValue = "1";
+//            highGoal.eventTime = System.currentTimeMillis();
+//            FirstActivity.myAppVariables.eventList.add(highGoal);
+//        }
 
         myAppVariables.CSVCreate(this,useBluetoothActivity,saveFileOnly);
         if (useBluetoothActivity == false) {

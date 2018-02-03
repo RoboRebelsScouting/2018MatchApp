@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-
+//This class contains the necessary variables used throughout the app
 /**
  * Created by mcgrathg19 on 1/18/2017.
  */
@@ -235,7 +235,7 @@ public class Variables {
         String fileNameBase = competitionName + "-" + matchNumber + "-" + robotNumber + "-" + scouterName.trim();
         String fileName = fileNameBase +
                 ".csv";
-        File directory = getAlbumStorageDir("/FRC2017");
+        File directory = getAlbumStorageDir("/FRC2018");
         File file = new File(directory,fileName);
 
         String fileString = new String();

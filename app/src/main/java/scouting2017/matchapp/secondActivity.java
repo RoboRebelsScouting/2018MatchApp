@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import static scouting2017.matchapp.FirstActivity.myAppVariables;
-
+//This class has the necessary methods for the Autonomous page
 
 public class secondActivity extends AppCompatActivity {
     public boolean crossedBaseline = false;
@@ -208,6 +208,7 @@ public class secondActivity extends AppCompatActivity {
         crossBaseline.eventTime = System.currentTimeMillis();
         myAppVariables.eventList.add(crossBaseline);
     }
+
 
     public void foul(View view) {
         if (myAppVariables.foulAuto < 1) {
