@@ -109,6 +109,19 @@ public boolean robotBroke = false;
         saveFileOnly = false;
         this.createCSV(view);
 
+        //zeroes out every values when submitted
+        myAppVariables.numberCubesSwitchPlacedAuto = 0;
+        myAppVariables.numberCubesScale = 0;
+        myAppVariables.numberCubesSwitchPlacedTeleop = 0;
+        myAppVariables.numberCubesOpponentSwitchPlacedTeleop = 0;
+        myAppVariables.numberCubesScaleTeleop = 0;
+        myAppVariables.numberCubesVault = 0;
+        myAppVariables.numberCubesHuman = 0;
+        myAppVariables.numberCubesDroppedTeleop = 0;
+        myAppVariables.numberCubesFromGround = 0;
+        myAppVariables.numberCubesStuck = 0;
+
+
         //EditText editText = (EditText) findViewById(R.id.enterPenalty);
 //        if(editText.getText().toString().equals("")) {
 //            Toast.makeText(getApplicationContext(), "Enter number of penalties", Toast.LENGTH_LONG).show();

@@ -219,6 +219,12 @@ public class secondActivity extends AppCompatActivity {
 
         TextView foulText = (TextView) findViewById(R.id.foulText);
         foulText.setText("✓");
+//        if(foulText.getText() == "✓" ) {
+//            foulText.setText("");
+//        } else {
+//            foulText.setText("✓");
+//        }
+
         GameEvent foulAuto = new GameEvent();
         foulAuto.eventType = "foulAuto";
         foulAuto.eventValue = "1";
