@@ -154,6 +154,16 @@ public class thirdActivity extends AppCompatActivity {
         myAppVariables.eventList.add(groundCube);
     }
 
+    public void cubesStuckInRobot(View view) {
+        myAppVariables.numberCubesStuck++;
+        TextView numberOfCubesStuck = (TextView) findViewById(R.id.numberOfCubesStuck);
+        numberOfCubesStuck.setText(Integer.toString(myAppVariables.numberCubesStuck));
+        GameEvent cubesStuck = new GameEvent();
+        cubesStuck.eventType = "stuckCube";
+        cubesStuck.eventValue = "1";
+        cubesStuck.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(cubesStuck);
+    }
 
 
     public void minusCubesSwitchTeleop(View view) {
@@ -248,5 +258,18 @@ public class thirdActivity extends AppCompatActivity {
         minusCubesFromGround.eventValue = "-1";
         minusCubesFromGround.eventTime = System.currentTimeMillis();
         FirstActivity.myAppVariables.eventList.add(minusCubesFromGround);
+    }
+
+    public void minusCubesStuck(View view) {
+        if(FirstActivity.myAppVariables.numberCubesStuck > 0) {
+            FirstActivity.myAppVariables.numberCubesStuck--;
+        }
+        TextView numberOfCubesStuck = (TextView) findViewById(R.id.numberOfCubesStuck);
+        numberOfCubesStuck.setText(Integer.toString(FirstActivity.myAppVariables.numberCubesStuck));
+        GameEvent minusCubesStuck = new GameEvent();
+        minusCubesStuck.eventType = "minusCubesStuck";
+        minusCubesStuck.eventValue = "-1";
+        minusCubesStuck.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(minusCubesStuck);
     }
     }

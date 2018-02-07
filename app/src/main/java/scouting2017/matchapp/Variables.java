@@ -41,6 +41,7 @@ public class Variables {
     public int numberCubesHuman;
     public int numberCubesDroppedTeleop;
     public int numberCubesFromGround;
+    public int numberCubesStuck;
     public List<GameEvent> eventList;
     public long startAutoTime;
     public long autoTime;
