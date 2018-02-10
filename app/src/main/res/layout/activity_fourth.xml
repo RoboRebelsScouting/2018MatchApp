@@ -18,42 +18,43 @@
         android:orientation="horizontal"
         android:id="@+id/radioGroup2">
 
-             <RadioButton
-                android:text="Yes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/brokeYes"
-                android:fontFamily="sans-serif"
-                android:textSize="24sp"
-                android:textColor="@android:color/holo_red_dark"
-                android:textStyle="normal|bold"
-                android:layout_marginLeft="185dp"
-                android:onClick="broke"/>
-            <RadioButton
-                android:text="No"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/brokeNo"
-                android:textSize="24sp"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="normal|bold"
-                android:layout_marginLeft="40dp"
-                android:onClick="broke"/>
+        <RadioButton
+            android:id="@+id/brokeYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="185dp"
+            android:fontFamily="sans-serif"
+            android:onClick="broke"
+            android:text="Yes"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="28sp"
+            android:textStyle="normal|bold" />
+
+        <RadioButton
+            android:id="@+id/brokeNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:onClick="broke"
+            android:text="No"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp"
+            android:textStyle="normal|bold" />
 
 
     </RadioGroup>
 
     <TextView
-        android:text="Did Robot Climb?"
+        android:id="@+id/climb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/climb"
-        android:textSize="24sp"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="normal|bold"
-        android:layout_marginTop="66dp"
+        android:layout_alignEnd="@+id/radioGroup3"
         android:layout_below="@+id/radioGroup3"
-        android:layout_alignEnd="@+id/radioGroup3" />
+        android:layout_marginTop="57dp"
+        android:text="Did Robot Climb?"
+        android:textColor="@color/colorPrimary"
+        android:textSize="28sp"
+        android:textStyle="normal|bold" />
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -72,7 +73,7 @@
             android:onClick="climb"
             android:text="Yes"
             android:textColor="@color/colorPrimary"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="normal|bold" />
 
         <RadioButton
@@ -84,35 +85,35 @@
             android:onClick="climb"
             android:text="No"
             android:textColor="@android:color/holo_red_dark"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="normal|bold" />
 
     </RadioGroup>
 
     <TextView
-        android:text="Did Robot Break?"
+        android:id="@+id/broken"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/broken"
-        android:textSize="24sp"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="normal|bold"
-        android:textAlignment="center"
         android:layout_marginTop="52dp"
+        android:text="Did Robot Break?"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="28sp"
+        android:textStyle="normal|bold"
         android:layout_below="@+id/radioGroup"
-        android:layout_alignStart="@+id/climb" />
+        android:layout_alignEnd="@+id/climb" />
 
     <TextView
         android:id="@+id/parked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/climb"
+        android:layout_marginTop="45dp"
         android:text="Did Robot Park?"
         android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="45dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/climb" />
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -127,44 +128,43 @@
             android:id="@+id/parkedYes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/parked"
+            android:layout_below="@+id/parked"
             android:layout_marginLeft="185dp"
+            android:onClick="parked"
             android:text="Yes"
             android:textColor="@color/colorPrimary"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:onClick="parked"
-            android:layout_below="@+id/parked"
-            android:layout_alignStart="@+id/parked" />
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/parkedNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
             android:layout_alignEnd="@+id/parked"
             android:layout_below="@+id/parked"
+            android:layout_marginLeft="40dp"
+            android:onClick="parked"
             android:text="No"
             android:textColor="@android:color/holo_red_dark"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:onClick="parked"/>
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
     </RadioGroup>
 
 
-
     <Button
-        android:text="Save"
+        android:id="@+id/saveButton"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:id="@+id/saveButton"
-        android:textSize="24sp"
-        android:textStyle="normal|bold"
-        android:textColor="@color/colorPrimaryDark"
-        android:onClick="saveFile"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="205dp" />
+        android:layout_marginBottom="205dp"
+        android:onClick="saveFile"
+        android:text="Save Only"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
 
     <Button
         android:text="Submit"
@@ -179,6 +179,57 @@
         android:layout_alignBottom="@+id/saveButton"
         android:layout_alignParentEnd="true" />
 
+    <TextView
+        android:id="@+id/tipped"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/broken"
+        android:layout_alignStart="@+id/broken"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_marginTop="57dp"
+        android:text="Did Robot Tip?"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below = "@+id/tipped"
+        android:layout_alignParentStart = "true"
+        android:orientation = "horizontal"
+        android:id = "@+id/radioGroup4" >
+
+        <RadioButton
+            android:id="@+id/tippedYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tipped"
+            android:layout_below="@+id/tipped"
+            android:layout_marginLeft="185dp"
+            android:onClick="tipped"
+            android:text="Yes"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/tippedNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/tipped"
+            android:layout_below="@+id/tipped"
+            android:layout_marginLeft="40dp"
+            android:onClick="tipped"
+            android:text="No"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+    </RadioGroup>
 
 
 </RelativeLayout>

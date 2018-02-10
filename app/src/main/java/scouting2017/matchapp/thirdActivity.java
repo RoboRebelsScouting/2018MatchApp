@@ -80,6 +80,9 @@ public class thirdActivity extends AppCompatActivity {
         TextView numberOfCubesSwitch = (TextView) findViewById(R.id.numberOfCubesSwitchTeleop);
         numberOfCubesSwitch.setText(Integer.toString(myAppVariables.numberCubesSwitchPlacedTeleop));
         GameEvent teleopAllianceSwitch = new GameEvent();
+
+       // myAppVariables.eventList.add(new GameEvent("teleopAllianceSwitch"));
+
         teleopAllianceSwitch.eventType = "teleopAllianceSwitch";
         teleopAllianceSwitch.eventValue = "1";
         teleopAllianceSwitch.eventTime = System.currentTimeMillis();

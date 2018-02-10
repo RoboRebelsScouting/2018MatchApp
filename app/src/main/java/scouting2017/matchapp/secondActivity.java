@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import static scouting2017.matchapp.FirstActivity.myAppVariables;
 //This class has the necessary methods for the Autonomous page
@@ -176,7 +177,7 @@ public class secondActivity extends AppCompatActivity {
         numberOfCubesScaleTeleop.setText(Integer.toString(myAppVariables.numberCubesScale));
         GameEvent minusCubesScaleAuto = new GameEvent();
         minusCubesScaleAuto.eventType = "cubeScalePlacedAuto";
-        minusCubesScaleAuto.eventValue = "1";
+        minusCubesScaleAuto.eventValue = "-1";
         minusCubesScaleAuto.eventTime = System.currentTimeMillis();
         myAppVariables.eventList.add(minusCubesScaleAuto);
     }
@@ -189,17 +190,17 @@ public class secondActivity extends AppCompatActivity {
         numberOfCubesSwitchTeleop.setText(Integer.toString(myAppVariables.numberCubesSwitchPlacedAuto));
         GameEvent minusDroppedCubeSwitchAuto = new GameEvent();
         minusDroppedCubeSwitchAuto.eventType = "droppedCubeSwitchAuto";
-        minusDroppedCubeSwitchAuto.eventValue = "1";
+        minusDroppedCubeSwitchAuto.eventValue = "-1";
         minusDroppedCubeSwitchAuto.eventTime = System.currentTimeMillis();
         myAppVariables.eventList.add(minusDroppedCubeSwitchAuto);
     }
 
     public void crossBaseline(View view) {
-        if (myAppVariables.crossBaselineAuto < 1) {
+       // if (myAppVariables.crossBaselineAuto < 1) {
             myAppVariables.crossBaselineAuto++;
-        } else {
-            return;
-        }
+        //} else {
+          //  return;
+        //}
         TextView crossBaselineText = (TextView) findViewById(R.id.crossBaselineText);
         crossBaselineText.setText("✓");
         GameEvent crossBaseline = new GameEvent();
@@ -209,13 +210,31 @@ public class secondActivity extends AppCompatActivity {
         myAppVariables.eventList.add(crossBaseline);
     }
 
-
-    public void foul(View view) {
-        if (myAppVariables.foulAuto < 1) {
-            myAppVariables.foulAuto++;
+    public void noCross(View view) {
+        if(myAppVariables.crossBaselineAuto > 0) {
+            myAppVariables.crossBaselineAuto--;
         } else {
             return;
         }
+        TextView crossBaselineText = (TextView) findViewById(R.id.crossBaselineText);
+        crossBaselineText.setText("");
+        GameEvent crossBaseline = new GameEvent();
+        crossBaseline.eventType = "crossBaseline";
+        crossBaseline.eventValue = "0";
+        crossBaseline.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(crossBaseline);
+
+    }
+
+
+
+
+    public void foul(View view) {
+       // if (myAppVariables.foulAuto < 1) {
+            myAppVariables.foulAuto++;
+        //} else {
+        //    return;
+        //}
 
         TextView foulText = (TextView) findViewById(R.id.foulText);
         foulText.setText("✓");
@@ -231,6 +250,27 @@ public class secondActivity extends AppCompatActivity {
         foulAuto.eventTime = System.currentTimeMillis();
         myAppVariables.eventList.add(foulAuto);
 
+    }
+
+    public void noFoul(View view) {
+        if(myAppVariables.foulAuto > 0) {
+            myAppVariables.foulAuto--;
+        } else {
+            return;
+        }
+        TextView foulText = (TextView) findViewById(R.id.foulText);
+//        if(foulText.getText() == "✓") {
+//            foulText.setText("");
+//        } else {
+//            return;
+//        }
+        foulText.setText("");
+
+        GameEvent foulAuto = new GameEvent();
+        foulAuto.eventType = "foulAuto";
+        foulAuto.eventValue = "0";
+        foulAuto.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(foulAuto);
     }
 
 

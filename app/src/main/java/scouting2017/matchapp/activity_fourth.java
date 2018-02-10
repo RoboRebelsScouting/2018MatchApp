@@ -17,6 +17,7 @@ public class activity_fourth extends AppCompatActivity {
 public boolean robotClimbed = false;
 public boolean robotParked = false;
 public boolean robotBroke = false;
+public boolean robotTipped = false;
     public boolean useBluetoothActivity = false;
     public boolean saveFileOnly = false;
 
@@ -104,12 +105,30 @@ public boolean robotBroke = false;
                 break;
         }
     }
+
+    public void tipped (View view ) {
+        boolean checked = ((RadioButton) view).isChecked();
+        switch(view.getId()) {
+            case R.id.tippedNo:
+                if(checked == false) {
+                    robotTipped = true;
+                }
+                break;
+            case R.id.tippedYes:
+                if(checked == true) {
+                    robotTipped = true;
+                }
+                break;
+        }
+    }
     public void submitNew (View view) {
         useBluetoothActivity = false;
         saveFileOnly = false;
         this.createCSV(view);
 
         //zeroes out every values when submitted
+        myAppVariables.crossBaselineAuto = 0;
+        myAppVariables.foulAuto = 0;
         myAppVariables.numberCubesSwitchPlacedAuto = 0;
         myAppVariables.numberCubesScale = 0;
         myAppVariables.numberCubesSwitchPlacedTeleop = 0;
@@ -120,6 +139,9 @@ public boolean robotBroke = false;
         myAppVariables.numberCubesDroppedTeleop = 0;
         myAppVariables.numberCubesFromGround = 0;
         myAppVariables.numberCubesStuck = 0;
+        myAppVariables.scouterName = "";
+        myAppVariables.matchNumber = 0;
+        myAppVariables.robotNumber = 0;
 
 
         //EditText editText = (EditText) findViewById(R.id.enterPenalty);
@@ -171,6 +193,14 @@ public boolean robotBroke = false;
             myAppVariables.eventList.add(park);
 
         }
+        if(robotTipped == true) {
+            GameEvent tipped = new GameEvent();
+            tipped.eventType = "tipped";
+            tipped.eventValue = "1";
+            tipped.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(tipped);
+        }
+
         GameEvent colorOfAlliance = new GameEvent();
         colorOfAlliance.eventType = "allianceColor";
         if (FirstActivity.myAppVariables.allianceColor == true) {

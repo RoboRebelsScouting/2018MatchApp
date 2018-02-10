@@ -5,6 +5,20 @@ package scouting2017.matchapp;
  */
 
 public class GameEvent {
+    public GameEvent() {
+
+    }
+
+    public GameEvent(String eventType) {
+        this(eventType,"1");
+    }
+
+    public GameEvent(String eventType, String eventValue) {
+        this.eventType = eventType;
+        this.eventValue = eventValue;
+        this.eventTime = System.currentTimeMillis();
+    }
+
     public String eventType ;
     public String eventValue ;
     public Long eventTime ;

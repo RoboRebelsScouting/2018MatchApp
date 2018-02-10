@@ -88,17 +88,17 @@ public class FirstActivity extends AppCompatActivity {
         try {
             long currentTimeInMillis = System.currentTimeMillis();
 
-            if ((currentTimeInMillis >= sdf.parse("Feb 17 2017").getTime()) &&
-                    (currentTimeInMillis < sdf.parse("Feb 19 2017").getTime() )) {
+            if ((currentTimeInMillis >= sdf.parse("Feb 9 2018").getTime()) &&
+                    (currentTimeInMillis < sdf.parse("Feb 20 2018").getTime() )) {
                 eventNameText.setText("Week_0");
-            } else if ((currentTimeInMillis >= sdf.parse("Feb 19 2017").getTime()) &&
+            } else if ((currentTimeInMillis >= sdf.parse("Feb 19 2018").getTime()) &&
                     (currentTimeInMillis < sdf.parse("Mar 12 2017").getTime() )) {
                 eventNameText.setText("WPI");
-            } else if ((currentTimeInMillis >= sdf.parse("Mar 13 2017").getTime()) &&
-                    (currentTimeInMillis < sdf.parse("Mar 27 2017").getTime() )) {
+            } else if ((currentTimeInMillis >= sdf.parse("Mar 13 2018").getTime()) &&
+                    (currentTimeInMillis < sdf.parse("Mar 27 2018").getTime() )) {
                 eventNameText.setText("Bryant");
-            } else if ((currentTimeInMillis >= sdf.parse("Mar 28 2017").getTime()) &&
-                    (currentTimeInMillis < sdf.parse("Apr 9 2017").getTime() )) {
+            } else if ((currentTimeInMillis >= sdf.parse("Mar 28 2018").getTime()) &&
+                    (currentTimeInMillis < sdf.parse("Apr 9 2018").getTime() )) {
                 eventNameText.setText("UNH");
             }  else {
                 eventNameText.setText("Worlds");
@@ -160,6 +160,7 @@ public class FirstActivity extends AppCompatActivity {
         //SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         String robotPositionString = sharedPref.getString("pref_assignment", null);
+        myAppVariables.robotColor = robotPositionString;
         switch (robotPositionString) {
             case "Red 1":
                 // Red 1 processing code
@@ -196,7 +197,18 @@ public class FirstActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Select Robot Position (1,2, or 3)", Toast.LENGTH_LONG).show();
             return;
         }
+        if(myAppVariables.matchNumber == 0) {
+            Toast.makeText(getApplicationContext(), "Enter Match Number", Toast.LENGTH_LONG).show();
+        }
+        if(myAppVariables.robotNumber == 0) {
+            Toast.makeText(getApplicationContext(), "Enter Robot Number", Toast.LENGTH_LONG).show();
+        }
+
+
         FirstActivity.myAppVariables.scouterName = f.getText().toString();
+        if(myAppVariables.scouterName == "") {
+            Toast.makeText(getApplicationContext(), "Enter Scouter Name", Toast.LENGTH_LONG).show();
+        }
         Intent intent = new Intent(this, secondActivity.class);
         myAppVariables.startAutoTime = System.currentTimeMillis();
         startActivity(intent);

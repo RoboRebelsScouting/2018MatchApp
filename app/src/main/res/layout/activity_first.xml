@@ -19,9 +19,9 @@
         android:hint="Enter Name"
         android:textSize="24sp"
         android:textColor="@color/colorPrimaryDark"
+        android:layout_height="80dp"
         android:layout_alignTop="@+id/Name"
-        android:layout_alignParentEnd="true"
-        android:layout_height="80dp" />
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:id="@+id/enterRobot"
