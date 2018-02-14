@@ -183,15 +183,14 @@
         android:id="@+id/tipped"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/broken"
-        android:layout_alignStart="@+id/broken"
-        android:layout_below="@+id/radioGroup2"
         android:layout_marginTop="57dp"
         android:text="Did Robot Tip?"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="28sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_alignStart="@+id/broken" />
 
 
 

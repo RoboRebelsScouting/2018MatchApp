@@ -126,9 +126,9 @@ public class FirstActivity extends AppCompatActivity {
             case R.id.action_settings:
                 startActivity(new Intent(this, SettingsActivity.class));
                 return true;
-            case R.id.action_status:
-                startActivity(new Intent(this, BluetoothStatusActivity.class));
-                return true;
+//            case R.id.action_status:
+//                startActivity(new Intent(this, BluetoothStatusActivity.class));
+//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -161,6 +161,7 @@ public class FirstActivity extends AppCompatActivity {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         String robotPositionString = sharedPref.getString("pref_assignment", null);
         myAppVariables.robotColor = robotPositionString;
+        GameEvent allianceValue  = new GameEvent();
         switch (robotPositionString) {
             case "Red 1":
                 // Red 1 processing code
@@ -193,6 +194,8 @@ public class FirstActivity extends AppCompatActivity {
                 myAppVariables.robotPosition = 3;
                 break;
         }
+
+
         if (myAppVariables.robotPosition == 0) {
             Toast.makeText(getApplicationContext(),"Select Robot Position (1,2, or 3)", Toast.LENGTH_LONG).show();
             return;
@@ -203,6 +206,7 @@ public class FirstActivity extends AppCompatActivity {
         if(myAppVariables.robotNumber == 0) {
             Toast.makeText(getApplicationContext(), "Enter Robot Number", Toast.LENGTH_LONG).show();
         }
+
 
 
         FirstActivity.myAppVariables.scouterName = f.getText().toString();

@@ -126,7 +126,7 @@ public boolean robotTipped = false;
         saveFileOnly = false;
         this.createCSV(view);
 
-        //zeroes out every values when submitted
+        //zeroes out all values when submitted
         myAppVariables.crossBaselineAuto = 0;
         myAppVariables.foulAuto = 0;
         myAppVariables.numberCubesSwitchPlacedAuto = 0;
@@ -201,15 +201,29 @@ public boolean robotTipped = false;
             myAppVariables.eventList.add(tipped);
         }
 
-        GameEvent colorOfAlliance = new GameEvent();
-        colorOfAlliance.eventType = "allianceColor";
+        GameEvent allianceColor = new GameEvent();
+        allianceColor.eventType = "allianceColor";
         if (FirstActivity.myAppVariables.allianceColor == true) {
-            colorOfAlliance.eventValue = "Blue";
+            allianceColor.eventValue = "Blue";
         } else {
-            colorOfAlliance.eventValue = "Red";
+            allianceColor.eventValue = "Red";
         }
-        colorOfAlliance.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(colorOfAlliance);
+        allianceColor.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(allianceColor);
+
+
+
+        GameEvent alliancePosition = new GameEvent();
+        alliancePosition.eventType = "alliancePosition";
+        if(FirstActivity.myAppVariables.robotPosition == 1) {
+            alliancePosition.eventValue = "1";
+        } else if(FirstActivity.myAppVariables.robotPosition == 2) {
+            alliancePosition.eventValue = "2";
+        } else if(FirstActivity.myAppVariables.robotPosition == 3) {
+            alliancePosition.eventValue = "3";
+        }
+        alliancePosition.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(alliancePosition);
 
 //        for (int c = 0; c < FirstActivity.myAppVariables.numberHighGoalsAuto; c++) {
 //            GameEvent highGoalAuto = new GameEvent();

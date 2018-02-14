@@ -19,6 +19,8 @@ public class GameEvent {
         this.eventTime = System.currentTimeMillis();
     }
 
+
+
     public String eventType ;
     public String eventValue ;
     public Long eventTime ;

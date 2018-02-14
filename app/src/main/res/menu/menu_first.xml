@@ -5,11 +5,6 @@
         android:icon="@drawable/ic_settings_white_24dp"
         android:title="@string/activity_settings"
         app:showAsAction="always"/>
-    <item
-        android:id = "@+id/action_status"
-        android:icon = "@drawable/ic_sync_black_24dp"
-        android:title = "Bluetooth Status"
-        app:showAsAction="always" />
 
 
 </menu>

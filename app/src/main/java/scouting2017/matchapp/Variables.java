@@ -244,7 +244,7 @@ public class Variables {
 
         try {
             FileWriter writer = new FileWriter(file);
-            String lineOne = competitionName + "," + matchNumber + "," + robotNumber + robotColor + "," + robotPosition + "," + scouterName.trim() ;
+            String lineOne = competitionName + "," + matchNumber + "," + robotNumber + "," + robotColor + "," + robotPosition + "," + scouterName.trim() ;
 
             writer.write(lineOne + "\n");
             fileString = fileString + lineOne + "\n";

@@ -220,7 +220,7 @@ public class secondActivity extends AppCompatActivity {
         crossBaselineText.setText("");
         GameEvent crossBaseline = new GameEvent();
         crossBaseline.eventType = "crossBaseline";
-        crossBaseline.eventValue = "0";
+        crossBaseline.eventValue = "-1";
         crossBaseline.eventTime = System.currentTimeMillis();
         myAppVariables.eventList.add(crossBaseline);
 
@@ -268,7 +268,7 @@ public class secondActivity extends AppCompatActivity {
 
         GameEvent foulAuto = new GameEvent();
         foulAuto.eventType = "foulAuto";
-        foulAuto.eventValue = "0";
+        foulAuto.eventValue = "-1";
         foulAuto.eventTime = System.currentTimeMillis();
         myAppVariables.eventList.add(foulAuto);
     }
