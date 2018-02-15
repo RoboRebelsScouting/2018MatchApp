@@ -234,7 +234,7 @@ public class Variables {
     }
 
     void CSVCreate(Activity theActivity, Boolean useBluetoothActivity, Boolean saveFileOnly) {
-        String fileNameBase = competitionName + "-" + matchNumber + "-" + robotNumber + "-" + robotColor + "-" + "-" + scouterName.trim();
+        String fileNameBase = competitionName + "-" + matchNumber + "-" + robotNumber + "-" + robotColor + "-"  + scouterName.trim();
         String fileName = fileNameBase +
                 ".csv";
         File directory = getAlbumStorageDir("/FRC2018");
@@ -244,7 +244,7 @@ public class Variables {
 
         try {
             FileWriter writer = new FileWriter(file);
-            String lineOne = competitionName + "," + matchNumber + "," + robotNumber + "," + robotColor + "," + robotPosition + "," + scouterName.trim() ;
+            String lineOne = competitionName + "," + matchNumber + "," + robotNumber + "," + robotColor  + "," + scouterName.trim() ;
 
             writer.write(lineOne + "\n");
             fileString = fileString + lineOne + "\n";

@@ -139,9 +139,9 @@ public boolean robotTipped = false;
         myAppVariables.numberCubesDroppedTeleop = 0;
         myAppVariables.numberCubesFromGround = 0;
         myAppVariables.numberCubesStuck = 0;
-        myAppVariables.scouterName = "";
-        myAppVariables.matchNumber = 0;
-        myAppVariables.robotNumber = 0;
+        //myAppVariables.scouterName = "";
+        //myAppVariables.matchNumber = 0;
+        //myAppVariables.robotNumber = 0;
 
 
         //EditText editText = (EditText) findViewById(R.id.enterPenalty);
