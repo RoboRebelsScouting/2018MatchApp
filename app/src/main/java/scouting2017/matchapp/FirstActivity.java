@@ -160,37 +160,43 @@ public class FirstActivity extends AppCompatActivity {
         //SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         String robotPositionString = sharedPref.getString("pref_assignment", null);
-        myAppVariables.robotColor = robotPositionString;
+        //myAppVariables.robotColor = robotPositionString;
         GameEvent allianceValue  = new GameEvent();
         switch (robotPositionString) {
             case "Red 1":
                 // Red 1 processing code
                 allianceColor = false;
+                myAppVariables.robotColor = "Red";
                 myAppVariables.robotPosition = 1;
                 break;
             case "Red 2":
                 //Red 2 processing code
                 allianceColor = false;
+                myAppVariables.robotColor = "Red";
                 myAppVariables.robotPosition = 2;
                 break;
             case "Red 3":
                 //Red 3 processing code
                 allianceColor = false;
+                myAppVariables.robotColor = "Red";
                 myAppVariables.robotPosition = 3;
                 break;
             case "Blue 1":
                 //Blue 1 processing code
                 allianceColor = true;
+                myAppVariables.robotColor = "Blue";
                 myAppVariables.robotPosition = 1;
                 break;
             case "Blue 2":
                 //Blue 2 processing code
                 allianceColor = true;
+                myAppVariables.robotColor = "Blue";
                 myAppVariables.robotPosition = 2;
                 break;
             case "Blue 3":
                 //Blue 3 processing code
                 allianceColor = true;
+                myAppVariables.robotColor = "Blue";
                 myAppVariables.robotPosition = 3;
                 break;
         }
