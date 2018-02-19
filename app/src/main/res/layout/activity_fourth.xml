@@ -48,13 +48,13 @@
         android:id="@+id/climb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/radioGroup3"
-        android:layout_below="@+id/radioGroup3"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="52dp"
         android:text="Did Robot Climb?"
         android:textColor="@color/colorPrimary"
         android:textSize="28sp"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/radioGroup3"
+        android:layout_alignEnd="@+id/radioGroup3" />
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -94,7 +94,7 @@
         android:id="@+id/broken"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="46dp"
         android:text="Did Robot Break?"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
@@ -107,13 +107,13 @@
         android:id="@+id/parked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/climb"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="17dp"
         android:text="Did Robot Park?"
         android:textColor="@color/colorPrimary"
         android:textSize="28sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/broken" />
 
     <RadioGroup
         android:layout_width="wrap_content"

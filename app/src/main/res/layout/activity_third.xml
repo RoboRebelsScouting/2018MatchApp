@@ -212,20 +212,20 @@
         android:onClick="cubesPlacedSwitchTeleop"
         android:text="Cubes Alliance Switch"
         android:textColor="@color/colorPrimary"
-        android:textSize="28sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/cubesOpponentSwitchTeleop"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
+        android:layout_alignStart="@+id/cubesSwitchTeleop"
+        android:layout_below="@+id/cubesSwitchTeleop"
         android:onClick="cubesPlacedOpponentSwitchTeleop"
         android:text="Cubes Opponent Switch"
         android:textColor="@color/colorPrimary"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/cubesSwitchTeleop"
-        android:layout_alignStart="@+id/cubesSwitchTeleop" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/cubesScaleTeleop"
@@ -236,32 +236,32 @@
         android:onClick="cubesPlacedScaleTeleop"
         android:text="Cubes Scale"
         android:textColor="@color/colorPrimary"
-        android:textSize="28sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/cubesVault"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
+        android:layout_alignStart="@+id/cubesScaleTeleop"
+        android:layout_below="@+id/cubesScaleTeleop"
         android:onClick="cubesPlacedVault"
         android:text="Cubes Vault"
         android:textColor="@color/colorPrimary"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/cubesScaleTeleop"
-        android:layout_alignStart="@+id/cubesScaleTeleop" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/cubesHuman"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
+        android:layout_alignStart="@+id/cubesVault"
+        android:layout_below="@+id/cubesVault"
         android:onClick="cubesFromHuman"
         android:text="Cubes From Human"
         android:textColor="@color/colorPrimary"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/cubesVault"
-        android:layout_alignStart="@+id/cubesVault" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/minusCubesDroppedTeleop"
@@ -278,25 +278,25 @@
         android:id="@+id/cubesDroppedTeleop"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
+        android:layout_alignStart="@+id/cubesHuman"
+        android:layout_below="@+id/cubesHuman"
         android:onClick="cubesDroppedTeleop"
         android:text="Cubes Dropped"
         android:textColor="@color/colorPrimary"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/cubesHuman"
-        android:layout_alignStart="@+id/cubesHuman" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/cubesFromGround"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
+        android:layout_alignStart="@+id/cubesDroppedTeleop"
+        android:layout_below="@+id/cubesDroppedTeleop"
         android:onClick="cubesPickedupGround"
         android:text="Cubes From Ground"
         android:textColor="@color/colorPrimary"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/cubesDroppedTeleop"
-        android:layout_alignStart="@+id/cubesDroppedTeleop" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/minusCubesGround"
@@ -318,7 +318,7 @@
         android:onClick="cubesStuckInRobot"
         android:text="Cubes Stuck In Robot"
         android:textColor="@color/colorPrimary"
-        android:textSize="28sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView

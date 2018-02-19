@@ -5,6 +5,9 @@
         android:icon="@drawable/ic_settings_white_24dp"
         android:title="@string/activity_settings"
         app:showAsAction="always"/>
+    <item android:id = "@id/textView"
+        android:title="@string/pref_assignment"  
+        app:showAsAction="always" />
 
 
 </menu>

@@ -127,7 +127,7 @@
         android:textColor="?attr/actionModeSplitBackground"
         android:textSize="28sp"
         android:textStyle="normal|bold"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="106dp"
         android:layout_below="@+id/autoTimerText"
         android:layout_alignParentStart="true" />
 
@@ -141,7 +141,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="28sp"
         android:textStyle="normal|bold"
-        android:layout_marginTop="113dp"
+        android:layout_marginTop="69dp"
         android:layout_below="@+id/numberOfCubesSwitchTeleop"
         android:layout_alignParentStart="true" />
 
@@ -184,5 +184,48 @@
         android:layout_toEndOf="@+id/numberOfCubesSwitchTeleop"
         android:onClick="noCross"
         android:text="—" />
+
+    <TextView
+        android:id="@+id/autonomousPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Autonomous Position"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/autoLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <RadioButton
+        android:id="@+id/autoPosition3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/autonomousPosition"
+        android:layout_below="@+id/autonomousPosition"
+        android:text="3"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
+
+    <RadioButton
+        android:id="@+id/autoPosition2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/crossBaselineText"
+        android:layout_below="@+id/autonomousPosition"
+        android:text="2"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
+
+    <RadioButton
+        android:id="@+id/autoPosition1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/autonomousPosition"
+        android:layout_below="@+id/autonomousPosition"
+        android:text="1"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
 
 </RelativeLayout>

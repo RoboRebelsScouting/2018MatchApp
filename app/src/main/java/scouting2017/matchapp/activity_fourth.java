@@ -201,29 +201,29 @@ public boolean robotTipped = false;
             myAppVariables.eventList.add(tipped);
         }
 
-        GameEvent allianceColor = new GameEvent();
-        allianceColor.eventType = "allianceColor";
-        if (FirstActivity.myAppVariables.allianceColor == true) {
-            allianceColor.eventValue = "Blue";
-        } else {
-            allianceColor.eventValue = "Red";
-        }
-        allianceColor.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(allianceColor);
+//        GameEvent allianceColor = new GameEvent();
+//        allianceColor.eventType = "allianceColor";
+//        if (FirstActivity.myAppVariables.allianceColor == true) {
+//            allianceColor.eventValue = "Blue";
+//        } else {
+//            allianceColor.eventValue = "Red";
+//        }
+//        allianceColor.eventTime = System.currentTimeMillis();
+//        FirstActivity.myAppVariables.eventList.add(allianceColor);
 
 
 
-        GameEvent alliancePosition = new GameEvent();
-        alliancePosition.eventType = "alliancePosition";
-        if(FirstActivity.myAppVariables.robotPosition == 1) {
-            alliancePosition.eventValue = "1";
-        } else if(FirstActivity.myAppVariables.robotPosition == 2) {
-            alliancePosition.eventValue = "2";
-        } else if(FirstActivity.myAppVariables.robotPosition == 3) {
-            alliancePosition.eventValue = "3";
-        }
-        alliancePosition.eventTime = System.currentTimeMillis();
-        FirstActivity.myAppVariables.eventList.add(alliancePosition);
+//        GameEvent alliancePosition = new GameEvent();
+//        alliancePosition.eventType = "alliancePosition";
+//        if(FirstActivity.myAppVariables.robotPosition == 1) {
+//            alliancePosition.eventValue = "1";
+//        } else if(FirstActivity.myAppVariables.robotPosition == 2) {
+//            alliancePosition.eventValue = "2";
+//        } else if(FirstActivity.myAppVariables.robotPosition == 3) {
+//            alliancePosition.eventValue = "3";
+//        }
+//        alliancePosition.eventTime = System.currentTimeMillis();
+//        FirstActivity.myAppVariables.eventList.add(alliancePosition);
 
 //        for (int c = 0; c < FirstActivity.myAppVariables.numberHighGoalsAuto; c++) {
 //            GameEvent highGoalAuto = new GameEvent();
