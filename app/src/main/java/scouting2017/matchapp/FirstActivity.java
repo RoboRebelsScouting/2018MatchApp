@@ -92,7 +92,7 @@ public class FirstActivity extends AppCompatActivity {
                     (currentTimeInMillis < sdf.parse("Feb 20 2018").getTime() )) {
                 eventNameText.setText("Week_0");
             } else if ((currentTimeInMillis >= sdf.parse("Feb 19 2018").getTime()) &&
-                    (currentTimeInMillis < sdf.parse("Mar 12 2017").getTime() )) {
+                    (currentTimeInMillis < sdf.parse("Mar 12 2018").getTime() )) {
                 eventNameText.setText("WPI");
             } else if ((currentTimeInMillis >= sdf.parse("Mar 13 2018").getTime()) &&
                     (currentTimeInMillis < sdf.parse("Mar 27 2018").getTime() )) {

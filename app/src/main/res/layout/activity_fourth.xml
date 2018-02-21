@@ -48,7 +48,7 @@
         android:id="@+id/climb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="37dp"
         android:text="Did Robot Climb?"
         android:textColor="@color/colorPrimary"
         android:textSize="28sp"
@@ -94,7 +94,7 @@
         android:id="@+id/broken"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="136dp"
         android:text="Did Robot Break?"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
@@ -229,6 +229,56 @@
             android:textStyle="bold" />
 
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/carried"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Was Robot Carried?"
+        android:textColor="@color/colorPrimary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/radioGroup"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below = "@+id/carried"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:id="@+id/radioGroup6">
+
+        <RadioButton
+            android:id="@+id/carriedYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/carried"
+            android:layout_below="@+id/carried"
+            android:text="Yes"
+            android:layout_marginLeft="100dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/saveButton"
+            android:layout_marginTop="250dp"
+            android:layout_marginStart="21dp" />
+
+        <RadioButton
+            android:id="@+id/carriedNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/carried"
+            android:layout_alignEnd="@+id/broken"
+            android:onClick="carried"/>
+    </RadioGroup>
+
 
 
 </RelativeLayout>

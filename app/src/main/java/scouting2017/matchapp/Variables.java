@@ -59,6 +59,7 @@ public class Variables {
     public String btClientFileName;
     public String btClientMessageString;
     public int robotPosition = 0;
+    public int autoPosition = 0;
     public String robotColor;
     public Activity btClientActivity;
     ArrayList<Match> matchArrayList = new ArrayList<Match>();

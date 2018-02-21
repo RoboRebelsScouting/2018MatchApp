@@ -200,6 +200,37 @@ public boolean robotTipped = false;
             tipped.eventTime = System.currentTimeMillis();
             myAppVariables.eventList.add(tipped);
         }
+//        GameEvent autoPosition = new GameEvent();
+//        autoPosition.eventType = "autoPosition";
+//        autoPosition.eventValue = "3";
+//        autoPosition.eventTime = System.currentTimeMillis();
+//        myAppVariables.eventList.add(autoPosition);
+
+        if(myAppVariables.autoPosition == 1) {
+            GameEvent autoPosition = new GameEvent();
+            autoPosition.eventType = "autoPosition";
+            autoPosition.eventValue = "1";
+            autoPosition.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(autoPosition);
+        }
+
+        if(myAppVariables.autoPosition == 2) {
+            GameEvent autoPosition = new GameEvent();
+            autoPosition.eventType = "autoPosition";
+            autoPosition.eventValue = "2";
+            autoPosition.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(autoPosition);
+
+        }
+
+        if(myAppVariables.autoPosition == 3) {
+            GameEvent autoPosition = new GameEvent();
+            autoPosition.eventType = "autoPosition";
+            autoPosition.eventValue = "3";
+            autoPosition.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(autoPosition);
+        }
+
 
 //        GameEvent allianceColor = new GameEvent();
 //        allianceColor.eventType = "allianceColor";

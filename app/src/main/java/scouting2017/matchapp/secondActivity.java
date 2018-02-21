@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -63,6 +64,54 @@ public class secondActivity extends AppCompatActivity {
         Intent intent = new Intent(this, thirdActivity.class);
         autoTimer.removeCallbacks(updateTimer);
         startActivity(intent);
+    }
+
+    public void autoPosition (View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+        switch (view.getId()) {
+            case R.id.autoPosition1:
+                if(checked) {
+                    myAppVariables.autoPosition = 1;
+                }
+                break;
+            case R.id.autoPosition2:
+                if(checked) {
+                    myAppVariables.autoPosition = 2;
+                }
+                break;
+            case R.id.autoPosition3:
+                if(checked) {
+                    myAppVariables.autoPosition = 3;
+                }
+                break;
+        }
+
+//        if(myAppVariables.autoPosition == 1) {
+//            GameEvent autoPosition = new GameEvent();
+//            autoPosition.eventType = "autoPosition";
+//            autoPosition.eventValue = "1";
+//            autoPosition.eventTime = System.currentTimeMillis();
+//            myAppVariables.eventList.add(autoPosition);
+//        }
+//
+//        if(myAppVariables.autoPosition == 2) {
+//            GameEvent autoPosition = new GameEvent();
+//            autoPosition.eventType = "autoPosition";
+//            autoPosition.eventValue = "2";
+//            autoPosition.eventTime = System.currentTimeMillis();
+//            myAppVariables.eventList.add(autoPosition);
+//
+//        }
+//
+//        if(myAppVariables.autoPosition == 3) {
+//            GameEvent autoPosition = new GameEvent();
+//            autoPosition.eventType = "autoPosition";
+//            autoPosition.eventValue = "3";
+//            autoPosition.eventTime = System.currentTimeMillis();
+//            myAppVariables.eventList.add(autoPosition);
+//        }
+
+
     }
 
     public void cubesPlacedSwitch(View view) {

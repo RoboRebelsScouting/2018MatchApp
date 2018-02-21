@@ -142,4 +142,12 @@
         android:layout_below="@+id/enterName"
         android:layout_above="@+id/enterMatch" />
 
+    <TextView
+        android:id="@+id/tabletId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        tools:text="@string/pref_assignment" />
+
 </RelativeLayout>
