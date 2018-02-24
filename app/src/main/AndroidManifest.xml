@@ -10,7 +10,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="MatchApp Ver1.4"
+        android:label="MatchApp Ver1.5"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity

@@ -71,17 +71,17 @@ public class secondActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.autoPosition1:
                 if(checked) {
-                    myAppVariables.autoPosition = 1;
+                    myAppVariables.autoPosition = "left";
                 }
                 break;
             case R.id.autoPosition2:
                 if(checked) {
-                    myAppVariables.autoPosition = 2;
+                    myAppVariables.autoPosition = "middle";
                 }
                 break;
             case R.id.autoPosition3:
                 if(checked) {
-                    myAppVariables.autoPosition = 3;
+                    myAppVariables.autoPosition = "right";
                 }
                 break;
         }
@@ -246,18 +246,25 @@ public class secondActivity extends AppCompatActivity {
 
     public void crossBaseline(View view) {
        // if (myAppVariables.crossBaselineAuto < 1) {
-            myAppVariables.crossBaselineAuto++;
+            //myAppVariables.crossBaselineAuto++;
         //} else {
           //  return;
         //}
         TextView crossBaselineText = (TextView) findViewById(R.id.crossBaselineText);
         crossBaselineText.setText("✓");
-        GameEvent crossBaseline = new GameEvent();
-        crossBaseline.eventType = "crossBaseline";
-        crossBaseline.eventValue = "1";
-        crossBaseline.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(crossBaseline);
-    }
+        if(myAppVariables.crossBaselineAuto < 1) {
+            myAppVariables.crossBaselineAuto++;
+            GameEvent crossBaseline = new GameEvent();
+            crossBaseline.eventType = "crossBaseline";
+            crossBaseline.eventValue = "1";
+            crossBaseline.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(crossBaseline);
+        }
+        else {
+            myAppVariables.crossBaselineAuto = 1;
+        }
+        }
+
 
     public void noCross(View view) {
         if(myAppVariables.crossBaselineAuto > 0) {
@@ -280,7 +287,7 @@ public class secondActivity extends AppCompatActivity {
 
     public void foul(View view) {
        // if (myAppVariables.foulAuto < 1) {
-            myAppVariables.foulAuto++;
+            //myAppVariables.foulAuto++;
         //} else {
         //    return;
         //}
@@ -293,11 +300,15 @@ public class secondActivity extends AppCompatActivity {
 //            foulText.setText("✓");
 //        }
 
-        GameEvent foulAuto = new GameEvent();
-        foulAuto.eventType = "foulAuto";
-        foulAuto.eventValue = "1";
-        foulAuto.eventTime = System.currentTimeMillis();
-        myAppVariables.eventList.add(foulAuto);
+
+        if(myAppVariables.foulAuto < 1) {
+            myAppVariables.foulAuto++;
+            GameEvent foulAuto = new GameEvent();
+            foulAuto.eventType = "foulAuto";
+            foulAuto.eventValue = "1";
+            foulAuto.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(foulAuto);
+        }
 
     }
 

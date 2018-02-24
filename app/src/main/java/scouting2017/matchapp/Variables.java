@@ -42,6 +42,8 @@ public class Variables {
     public int numberCubesDroppedTeleop;
     public int numberCubesFromGround;
     public int numberCubesStuck;
+    public int numberhitsScale;
+    public int numberCarriedRobots;
     public List<GameEvent> eventList;
     public long startAutoTime;
     public long autoTime;
@@ -59,7 +61,7 @@ public class Variables {
     public String btClientFileName;
     public String btClientMessageString;
     public int robotPosition = 0;
-    public int autoPosition = 0;
+    public String autoPosition = "";
     public String robotColor;
     public Activity btClientActivity;
     ArrayList<Match> matchArrayList = new ArrayList<Match>();

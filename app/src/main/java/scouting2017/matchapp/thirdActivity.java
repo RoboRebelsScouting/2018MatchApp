@@ -168,6 +168,16 @@ public class thirdActivity extends AppCompatActivity {
         myAppVariables.eventList.add(cubesStuck);
     }
 
+    public void hitScale(View view) {
+        myAppVariables.numberhitsScale++;
+        TextView numberOfHitsScale = (TextView) findViewById(R.id.numberOfHitsScale);
+        numberOfHitsScale.setText(Integer.toString(myAppVariables.numberhitsScale));
+        GameEvent hitsScale = new GameEvent();
+        hitsScale.eventType = "hitsScale";
+        hitsScale.eventValue = "1";
+        hitsScale.eventTime = System.currentTimeMillis();
+        myAppVariables.eventList.add(hitsScale);
+    }
 
     public void minusCubesSwitchTeleop(View view) {
         if (FirstActivity.myAppVariables.numberCubesSwitchPlacedTeleop > 0) {
@@ -274,5 +284,19 @@ public class thirdActivity extends AppCompatActivity {
         minusCubesStuck.eventValue = "-1";
         minusCubesStuck.eventTime = System.currentTimeMillis();
         FirstActivity.myAppVariables.eventList.add(minusCubesStuck);
+    }
+
+    public void minusHitsScale(View view) {
+        if(FirstActivity.myAppVariables.numberhitsScale > 0) {
+            FirstActivity.myAppVariables.numberhitsScale--;
+        }
+        TextView numberOfHitsScale = (TextView) findViewById(R.id.numberOfHitsScale);
+        numberOfHitsScale.setText(Integer.toString(FirstActivity.myAppVariables.numberhitsScale));
+        GameEvent minusHitsScale = new GameEvent();
+        minusHitsScale.eventType = "minusHitsScale";
+        minusHitsScale.eventValue = "-1";
+        minusHitsScale.eventTime = System.currentTimeMillis();
+        FirstActivity.myAppVariables.eventList.add(minusHitsScale);
+
     }
     }

@@ -3,6 +3,7 @@ package scouting2017.matchapp;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,8 @@ public boolean robotClimbed = false;
 public boolean robotParked = false;
 public boolean robotBroke = false;
 public boolean robotTipped = false;
+    public boolean robotCarried = false;
+
     public boolean useBluetoothActivity = false;
     public boolean saveFileOnly = false;
 
@@ -121,6 +124,44 @@ public boolean robotTipped = false;
                 break;
         }
     }
+
+    public void carried(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+        switch (view.getId()) {
+            case R.id.carriedNo:
+                if(checked == false) {
+                    robotCarried = true;
+                }
+                break;
+            case R.id.carriedYes:
+                if(checked == true) {
+                    robotCarried = true;
+                }
+                break;
+        }
+    }
+
+    public void carriedRobots(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+        switch(view.getId()) {
+            case R.id.carriedNoRobots:
+                if(checked) {
+                    myAppVariables.numberCarriedRobots = 0;
+                }
+                break;
+            case R.id.carriedOneRobot:
+                if(checked) {
+                    myAppVariables.numberCarriedRobots = 1;
+                }
+                break;
+            case R.id.carriedTwoRobots:
+                if(checked) {
+                    myAppVariables.numberCarriedRobots = 2;
+                }
+                break;
+
+        }
+    }
     public void submitNew (View view) {
         useBluetoothActivity = false;
         saveFileOnly = false;
@@ -139,6 +180,8 @@ public boolean robotTipped = false;
         myAppVariables.numberCubesDroppedTeleop = 0;
         myAppVariables.numberCubesFromGround = 0;
         myAppVariables.numberCubesStuck = 0;
+        myAppVariables.autoPosition = "";
+        myAppVariables.numberCarriedRobots = 0;
         //myAppVariables.scouterName = "";
         //myAppVariables.matchNumber = 0;
         //myAppVariables.robotNumber = 0;
@@ -185,7 +228,7 @@ public boolean robotTipped = false;
             broke.eventTime = System.currentTimeMillis();
             myAppVariables.eventList.add(broke);
         }
-        if(robotParked = true) {
+        if(robotParked == true) {
             GameEvent park = new GameEvent();
             park.eventType = "park";
             park.eventValue = "1";
@@ -200,37 +243,62 @@ public boolean robotTipped = false;
             tipped.eventTime = System.currentTimeMillis();
             myAppVariables.eventList.add(tipped);
         }
-//        GameEvent autoPosition = new GameEvent();
-//        autoPosition.eventType = "autoPosition";
-//        autoPosition.eventValue = "3";
-//        autoPosition.eventTime = System.currentTimeMillis();
-//        myAppVariables.eventList.add(autoPosition);
 
-        if(myAppVariables.autoPosition == 1) {
+        if(robotCarried == true) {
+            GameEvent carried = new GameEvent();
+            carried.eventType = "carried";
+            carried.eventValue = "1";
+            carried.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(carried);
+        }
+
+        if(myAppVariables.autoPosition == "left") {
             GameEvent autoPosition = new GameEvent();
             autoPosition.eventType = "autoPosition";
-            autoPosition.eventValue = "1";
+            autoPosition.eventValue = "Left";
             autoPosition.eventTime = System.currentTimeMillis();
             myAppVariables.eventList.add(autoPosition);
         }
 
-        if(myAppVariables.autoPosition == 2) {
+        if(myAppVariables.autoPosition == "middle") {
             GameEvent autoPosition = new GameEvent();
             autoPosition.eventType = "autoPosition";
-            autoPosition.eventValue = "2";
+            autoPosition.eventValue = "middle";
             autoPosition.eventTime = System.currentTimeMillis();
             myAppVariables.eventList.add(autoPosition);
 
         }
 
-        if(myAppVariables.autoPosition == 3) {
+        if(myAppVariables.autoPosition == "right") {
             GameEvent autoPosition = new GameEvent();
             autoPosition.eventType = "autoPosition";
-            autoPosition.eventValue = "3";
+            autoPosition.eventValue = "right";
             autoPosition.eventTime = System.currentTimeMillis();
             myAppVariables.eventList.add(autoPosition);
         }
 
+        if(myAppVariables.numberCarriedRobots == 0) {
+            GameEvent carriedRobots = new GameEvent();
+            carriedRobots.eventType = "carriedRobots";
+            carriedRobots.eventValue = "0";
+            carriedRobots.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(carriedRobots);
+        }
+        if(myAppVariables.numberCarriedRobots == 1) {
+            GameEvent carriedRobots = new GameEvent();
+            carriedRobots.eventType = "carriedRobots";
+            carriedRobots.eventValue = "1";
+            carriedRobots.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(carriedRobots);
+        }
+
+        if(myAppVariables.numberCarriedRobots == 2) {
+            GameEvent carriedRobots = new GameEvent();
+            carriedRobots.eventType = "carriedRobots";
+            carriedRobots.eventValue = "2";
+            carriedRobots.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(carriedRobots);
+        }
 
 //        GameEvent allianceColor = new GameEvent();
 //        allianceColor.eventType = "allianceColor";
