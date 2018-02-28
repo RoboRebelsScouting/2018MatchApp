@@ -100,7 +100,7 @@
         android:textColor="@color/colorPrimary"
         android:textSize="28sp"
         android:textStyle="normal|bold"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="38dp"
         android:layout_below="@+id/radioGroup7"
         android:layout_toStartOf="@+id/submitNewButton" />
 
@@ -190,9 +190,9 @@
         android:textColor="@color/colorPrimary"
         android:textSize="28sp"
         android:textStyle="bold"
+        android:layout_marginTop="37dp"
         android:layout_below="@+id/radioGroup2"
-        android:layout_alignStart="@+id/carried"
-        android:layout_marginTop="46dp" />
+        android:layout_toEndOf="@+id/saveButton" />
 
 
 
@@ -333,11 +333,11 @@
             android:layout_alignTop="@+id/carriedOneRobot"
             android:layout_marginStart="18dp"
             android:layout_toEndOf="@+id/carriedOneRobot"
+            android:onClick="carriedRobots"
             android:text="2"
             android:textColor="@color/colorPrimary"
             android:textSize="28sp"
-            android:textStyle="bold"
-            android:onClick="carriedRobots"/>
+            android:textStyle="bold" />
 
     </RadioGroup>
 

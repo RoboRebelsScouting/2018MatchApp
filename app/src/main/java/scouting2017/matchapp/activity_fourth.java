@@ -182,6 +182,7 @@ public boolean robotTipped = false;
         myAppVariables.numberCubesStuck = 0;
         myAppVariables.autoPosition = "";
         myAppVariables.numberCarriedRobots = 0;
+        myAppVariables.numberhitsScale = 0;
         //myAppVariables.scouterName = "";
         //myAppVariables.matchNumber = 0;
         //myAppVariables.robotNumber = 0;

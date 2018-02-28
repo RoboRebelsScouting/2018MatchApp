@@ -243,25 +243,25 @@
         android:id="@+id/cubesVault"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_alignStart="@+id/cubesScaleTeleop"
-        android:layout_below="@+id/cubesScaleTeleop"
         android:onClick="cubesPlacedVault"
         android:text="Cubes Vault"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/cubesScaleTeleop"
+        android:layout_alignStart="@+id/cubesScaleTeleop" />
 
     <Button
         android:id="@+id/cubesHuman"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_alignStart="@+id/cubesVault"
-        android:layout_below="@+id/cubesVault"
         android:onClick="cubesFromHuman"
         android:text="Cubes From Human"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/cubesVault"
+        android:layout_alignStart="@+id/cubesVault" />
 
     <Button
         android:id="@+id/minusCubesDroppedTeleop"
@@ -278,13 +278,13 @@
         android:id="@+id/cubesDroppedTeleop"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_alignStart="@+id/cubesHuman"
-        android:layout_below="@+id/cubesHuman"
         android:onClick="cubesDroppedTeleop"
         android:text="Cubes Dropped"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/cubesHuman"
+        android:layout_alignStart="@+id/cubesHuman" />
 
     <Button
         android:id="@+id/cubesFromGround"
@@ -348,24 +348,24 @@
         android:id="@+id/hitScale"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/cubesStuck"
         android:onClick="hitScale"
         android:text="Robot Hit Scale"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/cubesStuck"
+        android:layout_alignStart="@+id/cubesStuck" />
 
     <TextView
         android:id="@+id/numberOfHitsScale"
         android:layout_width="100dp"
         android:layout_height="70dp"
-        android:layout_alignStart="@+id/numberOfCubesStuck"
-        android:layout_below="@+id/numberOfCubesStuck"
         android:text="0"
         android:textAlignment="center"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="60sp" />
+        android:textSize="60sp"
+        android:layout_below="@+id/numberOfCubesStuck"
+        android:layout_alignStart="@+id/numberOfCubesStuck" />
 
     <Button
         android:id="@+id/minusHitsScale"
