@@ -32,7 +32,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        android:layout_below="@+id/minusCubesVault"
+        android:layout_below="@+id/numberOfCubesVault"
         android:layout_alignParentEnd="true" />
 
     <TextView
@@ -44,8 +44,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="60sp"
-        android:layout_alignTop="@+id/cubesDroppedTeleop"
-        android:layout_toStartOf="@+id/minusCubesHuman" />
+        android:layout_above="@+id/numberOfCubesGround"
+        android:layout_alignStart="@+id/numberOfCubesGround" />
 
     <TextView
         android:id="@+id/teleopTimerText"
@@ -56,39 +56,27 @@
         android:layout_alignBottom="@+id/teleopLabel"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:text="—"
-        android:layout_width="80dp"
-        android:id="@+id/minusHopperBalls"
-        android:onClick="minusHopperBalls"
-        android:textSize="18sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="normal|bold"
-        android:layout_below="@+id/numberOfCubesOpponentSwitchTeleop"
-        android:layout_alignParentEnd="true"
-        android:layout_height="70dp" />
-
     <TextView
-        android:text="0"
         android:id="@+id/numberOfCubesScaleTeleop"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="60sp"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_red_dark"
         android:layout_width="100dp"
         android:layout_height="70dp"
-        android:layout_below="@+id/numberOfCubesOpponentSwitchTeleop"
-        android:layout_toStartOf="@+id/minusHopperBalls" />
+        android:layout_alignStart="@+id/numberOfCubesVault"
+        android:layout_alignTop="@+id/minusCubesScaleTeleop"
+        android:text="0"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="60sp" />
 
     <TextView
-        android:text="0"
         android:id="@+id/numberOfCubesSwitchTeleop"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="60sp"
-        android:textAlignment="center"
         android:layout_width="100dp"
         android:layout_height="70dp"
-        android:layout_above="@+id/cubesOpponentSwitchTeleop"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="60sp"
+        android:layout_alignTop="@+id/minusCubesSwitchTeleop"
         android:layout_toStartOf="@+id/minusCubesSwitchTeleop" />
 
     <Button
@@ -107,14 +95,13 @@
         android:id="@+id/minusCubesOpponentSwitchTeleop"
         android:layout_width="80dp"
         android:layout_height="70dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/numberOfCubesOpponentSwitchTeleop"
-        android:layout_toEndOf="@+id/numberOfCubesScaleTeleop"
         android:onClick="minusCubesOpponentSwitchTeleop"
         android:text="—"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:layout_alignTop="@+id/numberOfCubesOpponentSwitchTeleop"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:text="0"
@@ -125,8 +112,8 @@
         android:textColor="@android:color/holo_red_dark"
         android:layout_width="100dp"
         android:layout_height="70dp"
-        android:layout_below="@+id/numberOfCubesSwitchTeleop"
-        android:layout_alignStart="@+id/numberOfCubesSwitchTeleop" />
+        android:layout_above="@+id/numberOfCubesScaleTeleop"
+        android:layout_toStartOf="@+id/minusCubesOpponentSwitchTeleop" />
 
     <Button
         android:id="@+id/minusCubesScaleTeleop"
@@ -160,8 +147,8 @@
         android:textAlignment="center"
         android:layout_width="100dp"
         android:layout_height="70dp"
-        android:layout_below="@+id/minusHopperBalls"
-        android:layout_toStartOf="@+id/minusCubesScaleTeleop" />
+        android:layout_below="@+id/numberOfCubesScaleTeleop"
+        android:layout_alignStart="@+id/numberOfCubesHuman" />
 
     <Button
         android:id="@+id/minusCubesVault"
@@ -211,33 +198,33 @@
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_below="@+id/teleopLabel"
-        android:layout_alignEnd="@+id/submitOldButton"
-        android:layout_marginTop="18dp" />
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/teleopTimerText"
+        android:layout_alignEnd="@+id/submitOldButton" />
 
     <Button
         android:id="@+id/cubesOpponentSwitchTeleop"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_alignStart="@+id/cubesSwitchTeleop"
-        android:layout_below="@+id/cubesSwitchTeleop"
         android:onClick="cubesPlacedOpponentSwitchTeleop"
         android:text="Cubes Opponent Switch"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/cubesSwitchTeleop"
+        android:layout_alignStart="@+id/cubesSwitchTeleop" />
 
     <Button
         android:id="@+id/cubesScaleTeleop"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_alignStart="@+id/cubesOpponentSwitchTeleop"
-        android:layout_below="@+id/cubesOpponentSwitchTeleop"
         android:onClick="cubesPlacedScaleTeleop"
         android:text="Cubes Scale"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/cubesOpponentSwitchTeleop"
+        android:layout_alignStart="@+id/cubesOpponentSwitchTeleop" />
 
     <Button
         android:id="@+id/cubesVault"
@@ -290,13 +277,13 @@
         android:id="@+id/cubesFromGround"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_alignStart="@+id/cubesDroppedTeleop"
-        android:layout_below="@+id/cubesDroppedTeleop"
         android:onClick="cubesPickedupGround"
         android:text="Cubes From Ground"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/cubesDroppedTeleop"
+        android:layout_alignStart="@+id/cubesDroppedTeleop" />
 
     <Button
         android:id="@+id/minusCubesGround"

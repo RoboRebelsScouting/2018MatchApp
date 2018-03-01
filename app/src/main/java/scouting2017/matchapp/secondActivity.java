@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import static scouting2017.matchapp.FirstActivity.myAppVariables;
 //This class has the necessary methods for the Autonomous page
@@ -116,7 +115,7 @@ public class secondActivity extends AppCompatActivity {
 
     public void cubesPlacedSwitch(View view) {
         myAppVariables.numberCubesSwitchPlacedAuto++;
-        TextView numberOfCubesSwitch = (TextView) findViewById(R.id.numberOfCubesSwitchTeleop);
+        TextView numberOfCubesSwitch = (TextView) findViewById(R.id.numberOfCubesSwitchAuto);
         numberOfCubesSwitch.setText(Integer.toString(myAppVariables.numberCubesSwitchPlacedAuto));
         GameEvent autoAllianceSwitch = new GameEvent();
         autoAllianceSwitch.eventType = "autoAllianceSwitch";
@@ -127,7 +126,7 @@ public class secondActivity extends AppCompatActivity {
 
     public void cubesPlacedScale(View view) {
         myAppVariables.numberCubesScale++;
-        TextView numberOfCubesScale = (TextView) findViewById(R.id.numberOfCubesScaleTeleop);
+        TextView numberOfCubesScale = (TextView) findViewById(R.id.numberOfCubesScaleAuto);
         numberOfCubesScale.setText(Integer.toString(myAppVariables.numberCubesScale));
         GameEvent autoScale = new GameEvent();
         autoScale.eventType = "autoScale";
@@ -222,8 +221,8 @@ public class secondActivity extends AppCompatActivity {
         if (myAppVariables.numberCubesScale > 0) {
             myAppVariables.numberCubesScale--;
         }
-        TextView numberOfCubesScaleTeleop = (TextView) findViewById(R.id.numberOfCubesScaleTeleop);
-        numberOfCubesScaleTeleop.setText(Integer.toString(myAppVariables.numberCubesScale));
+        TextView numberOfCubesScaleAuto = (TextView) findViewById(R.id.numberOfCubesScaleAuto);
+        numberOfCubesScaleAuto.setText(Integer.toString(myAppVariables.numberCubesScale));
         GameEvent minusCubesScaleAuto = new GameEvent();
         minusCubesScaleAuto.eventType = "cubeScalePlacedAuto";
         minusCubesScaleAuto.eventValue = "-1";
@@ -235,8 +234,8 @@ public class secondActivity extends AppCompatActivity {
         if (myAppVariables.numberCubesSwitchPlacedAuto > 0) {
             myAppVariables.numberCubesSwitchPlacedAuto--;
         }
-        TextView numberOfCubesSwitchTeleop = (TextView) findViewById(R.id.numberOfCubesSwitchTeleop);
-        numberOfCubesSwitchTeleop.setText(Integer.toString(myAppVariables.numberCubesSwitchPlacedAuto));
+        TextView numberOfCubesSwitchAuto = (TextView) findViewById(R.id.numberOfCubesSwitchAuto);
+        numberOfCubesSwitchAuto.setText(Integer.toString(myAppVariables.numberCubesSwitchPlacedAuto));
         GameEvent minusDroppedCubeSwitchAuto = new GameEvent();
         minusDroppedCubeSwitchAuto.eventType = "droppedCubeSwitchAuto";
         minusDroppedCubeSwitchAuto.eventValue = "-1";
