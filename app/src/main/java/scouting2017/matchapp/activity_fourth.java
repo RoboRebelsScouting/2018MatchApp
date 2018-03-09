@@ -19,7 +19,7 @@ public boolean robotClimbed = false;
 public boolean robotParked = false;
 public boolean robotBroke = false;
 public boolean robotTipped = false;
-    public boolean robotCarried = false;
+    //public boolean robotCarried = false;
 
     public boolean useBluetoothActivity = false;
     public boolean saveFileOnly = false;
