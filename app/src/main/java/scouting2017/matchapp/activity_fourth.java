@@ -125,21 +125,21 @@ public boolean robotTipped = false;
         }
     }
 
-    public void carried(View view) {
-        boolean checked = ((RadioButton) view).isChecked();
-        switch (view.getId()) {
-            case R.id.carriedNo:
-                if(checked == false) {
-                    robotCarried = false;
-                }
-                break;
-            case R.id.carriedYes:
-                if(checked == true) {
-                    robotCarried = true;
-                }
-                break;
-        }
-    }
+//    public void carried(View view) {
+//        boolean checked = ((RadioButton) view).isChecked();
+//        switch (view.getId()) {
+//            case R.id.carriedNo:
+//                if(checked == false) {
+//                    robotCarried = false;
+//                }
+//                break;
+//            case R.id.carriedYes:
+//                if(checked == true) {
+//                    robotCarried = true;
+//                }
+//                break;
+//        }
+//    }
 
     public void carriedRobots(View view) {
         boolean checked = ((RadioButton) view).isChecked();
@@ -245,13 +245,13 @@ public boolean robotTipped = false;
             myAppVariables.eventList.add(tipped);
         }
 
-        if(robotCarried == true) {
-            GameEvent carried = new GameEvent();
-            carried.eventType = "carried";
-            carried.eventValue = "1";
-            carried.eventTime = System.currentTimeMillis();
-            myAppVariables.eventList.add(carried);
-        }
+//        if(robotCarried == true) {
+//            GameEvent carried = new GameEvent();
+//            carried.eventType = "carried";
+//            carried.eventValue = "1";
+//            carried.eventTime = System.currentTimeMillis();
+//            myAppVariables.eventList.add(carried);
+//        }
 
         if(myAppVariables.autoPosition == "left") {
             GameEvent autoPosition = new GameEvent();
