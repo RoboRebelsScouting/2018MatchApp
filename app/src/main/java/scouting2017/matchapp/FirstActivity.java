@@ -12,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 //import BluetoothStatusActivity;
@@ -134,7 +135,26 @@ public class FirstActivity extends AppCompatActivity {
         }
     }
 
-
+    public void autoPosition (View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+        switch (view.getId()) {
+            case R.id.autoPosition1:
+                if (checked) {
+                    myAppVariables.autoPosition = "left";
+                }
+                break;
+            case R.id.autoPosition2:
+                if (checked) {
+                    myAppVariables.autoPosition = "middle";
+                }
+                break;
+            case R.id.autoPosition3:
+                if (checked) {
+                    myAppVariables.autoPosition = "right";
+                }
+                break;
+        }
+    }
 
     public void toAuto(View view) {
 
@@ -202,6 +222,7 @@ public class FirstActivity extends AppCompatActivity {
         }
 
 
+
         if (myAppVariables.robotPosition == 0) {
             Toast.makeText(getApplicationContext(),"Select Robot Position (1,2, or 3)", Toast.LENGTH_LONG).show();
             return;
@@ -223,4 +244,6 @@ public class FirstActivity extends AppCompatActivity {
         myAppVariables.startAutoTime = System.currentTimeMillis();
         startActivity(intent);
     }
+
+
 }

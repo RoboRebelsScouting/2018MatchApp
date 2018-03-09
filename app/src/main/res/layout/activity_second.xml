@@ -103,7 +103,7 @@
         android:textStyle="normal|bold"
         android:layout_below="@+id/cubesScalePlacedAuto"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="54dp" />
+        android:layout_marginTop="85dp" />
 
     <Button
         android:text="To Teleop"
@@ -114,9 +114,9 @@
         android:textSize="24sp"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="normal|bold"
-        android:layout_marginBottom="24dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/foulAuto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
 
     <Button
         android:id="@+id/numberOfCubesSwitchAuto"
@@ -127,9 +127,9 @@
         android:textColor="?attr/actionModeSplitBackground"
         android:textSize="28sp"
         android:textStyle="normal|bold"
-        android:layout_marginTop="69dp"
-        android:layout_below="@+id/autonomousPosition"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/autoTimerText"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="45dp" />
 
     <Button
         android:id="@+id/cubesScalePlacedAuto"
@@ -141,22 +141,22 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="28sp"
         android:textStyle="normal|bold"
-        android:layout_marginTop="69dp"
         android:layout_below="@+id/numberOfCubesSwitchAuto"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="45dp" />
 
     <Button
         android:id="@+id/foulAuto"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_above="@+id/toTeleop"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="56dp"
         android:onClick="foul"
         android:text="Foul"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/crossBaselineAuto"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="49dp" />
 
     <TextView
         android:id="@+id/foulText"
@@ -184,70 +184,6 @@
         android:text="—"
         android:layout_alignTop="@+id/crossBaselineText"
         android:layout_toEndOf="@+id/numberOfCubesSwitchAuto" />
-
-    <TextView
-        android:id="@+id/autonomousPosition"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="Autonomous Position"
-        android:textAllCaps="true"
-        android:textColor="@color/colorPrimary"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/autoTimerText"
-        android:layout_centerHorizontal="true" />
-
-
-    <RadioGroup
-        android:id="@+id/autoPosition"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-
-        <RadioButton
-            android:id="@+id/autoPosition1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/autonomousPosition"
-            android:layout_below="@+id/autonomousPosition"
-            android:layout_marginLeft="115dp"
-            android:layout_marginTop="120dp"
-            android:onClick="autoPosition"
-            android:text="Left"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp" />
-
-        <RadioButton
-            android:id="@+id/autoPosition2"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:layout_alignEnd="@+id/noFoul"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="120dp"
-            android:onClick="autoPosition"
-            android:text="Middle"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp" />
-
-        <RadioButton
-            android:id="@+id/autoPosition3"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="120dp"
-            android:onClick="autoPosition"
-            android:text="Right"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            android:layout_below="@+id/autonomousPosition"
-            android:layout_toEndOf="@+id/numberOfCubesSwitchAuto" />
-
-
-    </RadioGroup>
-
-
 
 
 </RelativeLayout>

@@ -130,7 +130,7 @@ public boolean robotTipped = false;
         switch (view.getId()) {
             case R.id.carriedNo:
                 if(checked == false) {
-                    robotCarried = true;
+                    robotCarried = false;
                 }
                 break;
             case R.id.carriedYes:
@@ -278,13 +278,13 @@ public boolean robotTipped = false;
             myAppVariables.eventList.add(autoPosition);
         }
 
-        if(myAppVariables.numberCarriedRobots == 0) {
-            GameEvent carriedRobots = new GameEvent();
-            carriedRobots.eventType = "carriedRobots";
-            carriedRobots.eventValue = "0";
-            carriedRobots.eventTime = System.currentTimeMillis();
-            myAppVariables.eventList.add(carriedRobots);
-        }
+//        if(myAppVariables.numberCarriedRobots == 0) {
+//            GameEvent carriedRobots = new GameEvent();
+//            carriedRobots.eventType = "carriedRobots";
+//            carriedRobots.eventValue = "0";
+//            carriedRobots.eventTime = System.currentTimeMillis();
+//            myAppVariables.eventList.add(carriedRobots);
+//        }
         if(myAppVariables.numberCarriedRobots == 1) {
             GameEvent carriedRobots = new GameEvent();
             carriedRobots.eventType = "carriedRobots";
@@ -296,8 +296,9 @@ public boolean robotTipped = false;
         if(myAppVariables.numberCarriedRobots == 2) {
             GameEvent carriedRobots = new GameEvent();
             carriedRobots.eventType = "carriedRobots";
-            carriedRobots.eventValue = "2";
+            carriedRobots.eventValue = "1";
             carriedRobots.eventTime = System.currentTimeMillis();
+            myAppVariables.eventList.add(carriedRobots);
             myAppVariables.eventList.add(carriedRobots);
         }
 

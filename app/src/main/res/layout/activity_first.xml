@@ -125,7 +125,8 @@
         android:textAlignment="center"
         android:fontFamily="monospace"
         android:textStyle="normal|bold"
-        android:layout_below="@+id/enterRobot"
+        android:layout_marginTop="97dp"
+        android:layout_below="@+id/autoPosition"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -149,5 +150,68 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         tools:text="@string/pref_assignment" />
+
+    <TextView
+        android:id="@+id/autonomousPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Autonomous Position"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/enterRobot"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_marginTop="22dp" />
+
+
+    <RadioGroup
+        android:id="@+id/autoPosition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/autonomousPosition"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:id="@+id/autoPosition1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/autonomousPosition"
+            android:layout_below="@+id/autonomousPosition"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="5dp"
+            android:onClick="autoPosition"
+            android:text="Left"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/autoPosition2"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_alignEnd="@+id/noFoul"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"
+            android:onClick="autoPosition"
+            android:text="Middle"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/autoPosition3"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:onClick="autoPosition"
+            android:text="Right"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            android:layout_below="@+id/autonomousPosition"
+            android:layout_toEndOf="@+id/numberOfCubesSwitchAuto" />
+
+
+    </RadioGroup>
 
 </RelativeLayout>

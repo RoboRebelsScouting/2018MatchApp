@@ -65,25 +65,26 @@ public class secondActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void autoPosition (View view) {
-        boolean checked = ((RadioButton) view).isChecked();
-        switch (view.getId()) {
-            case R.id.autoPosition1:
-                if(checked) {
-                    myAppVariables.autoPosition = "left";
-                }
-                break;
-            case R.id.autoPosition2:
-                if(checked) {
-                    myAppVariables.autoPosition = "middle";
-                }
-                break;
-            case R.id.autoPosition3:
-                if(checked) {
-                    myAppVariables.autoPosition = "right";
-                }
-                break;
-        }
+//    public void autoPosition (View view) {
+//        boolean checked = ((RadioButton) view).isChecked();
+//        switch (view.getId()) {
+//            case R.id.autoPosition1:
+//                if (checked) {
+//                    myAppVariables.autoPosition = "left";
+//                }
+//                break;
+//            case R.id.autoPosition2:
+//                if (checked) {
+//                    myAppVariables.autoPosition = "middle";
+//                }
+//                break;
+//            case R.id.autoPosition3:
+//                if (checked) {
+//                    myAppVariables.autoPosition = "right";
+//                }
+//                break;
+//        }
+//    }
 
 //        if(myAppVariables.autoPosition == 1) {
 //            GameEvent autoPosition = new GameEvent();
@@ -111,7 +112,7 @@ public class secondActivity extends AppCompatActivity {
 //        }
 
 
-    }
+
 
     public void cubesPlacedSwitch(View view) {
         myAppVariables.numberCubesSwitchPlacedAuto++;

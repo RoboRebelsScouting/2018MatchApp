@@ -149,8 +149,7 @@
             android:text="No"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="28sp"
-            android:textStyle="bold"
-            android:layout_weight="0.22" />
+            android:textStyle="bold" />
 
     </RadioGroup>
 
@@ -264,7 +263,8 @@
             android:text="Yes"
             android:textColor="@color/colorPrimary"
             android:textSize="28sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="carried"/>
 
         <RadioButton
             android:id="@+id/carriedNo"
