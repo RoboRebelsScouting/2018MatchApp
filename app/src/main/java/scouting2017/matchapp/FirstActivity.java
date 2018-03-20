@@ -25,10 +25,6 @@ public class FirstActivity extends AppCompatActivity {
     public static Variables myAppVariables ;
     public static Activity appActivity;
     public boolean allianceColor;
-    public int robotPosition;
-
-    public boolean useBluetoothActivity = false;
-    public boolean saveFileOnly = false;
 
     @Override
     public void onBackPressed() {
@@ -158,10 +154,7 @@ public class FirstActivity extends AppCompatActivity {
         }
     }
 
-
-
-
-    public void toAuto(View view) {
+        public void toAuto(View view) {
 
         EditText t = (EditText) findViewById(R.id.enterRobot);
         if (t.getText().toString().equals("")) {
@@ -252,31 +245,5 @@ public class FirstActivity extends AppCompatActivity {
 
     }
 
-    public void startFirstActivity() {
-        Intent intent = new Intent(this, FirstActivity.class) ;
-        String competitionNameInfo = FirstActivity.myAppVariables.competitionName;
-        String scouterNameInfo = FirstActivity.myAppVariables.scouterName;
-        Integer matchNumberInfo = FirstActivity.myAppVariables.matchNumber;
-        Boolean allianceColor = FirstActivity.myAppVariables.allianceColor;
-        FirstActivity.myAppVariables.reset();
-        FirstActivity.myAppVariables.competitionName = competitionNameInfo;
-        FirstActivity.myAppVariables.scouterName = scouterNameInfo;
-        FirstActivity.myAppVariables.matchNumber = matchNumberInfo + 1;
-        FirstActivity.myAppVariables.allianceColor = allianceColor;
-        startActivity(intent);
-    }
 
-
-    public void noShow(View view) {
-        useBluetoothActivity = false;
-        saveFileOnly = false;
-        this.createCSV(view);
-    }
-
-    public void createCSV (View view) {
-        myAppVariables.CSVCreate(this,useBluetoothActivity,saveFileOnly);
-        if (useBluetoothActivity == false) {
-            startFirstActivity();
-        }
-    }
     }

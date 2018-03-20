@@ -59,7 +59,7 @@
         android:textStyle="normal|bold"
         android:textColor="@color/colorPrimaryDark"
         android:layout_below="@+id/textView"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="Scouter Name:"
@@ -125,10 +125,9 @@
         android:textAlignment="center"
         android:fontFamily="monospace"
         android:textStyle="normal|bold"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="89dp"
         android:layout_below="@+id/autoPosition"
-        android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/startMatch" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -214,17 +213,5 @@
 
 
     </RadioGroup>
-
-    <Button
-        android:id="@+id/noShow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:onClick="noShow"
-        android:text="No Show"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="24sp"
-        android:textStyle="bold" />
 
 </RelativeLayout>
