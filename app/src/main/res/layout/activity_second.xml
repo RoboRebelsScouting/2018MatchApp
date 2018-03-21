@@ -114,9 +114,9 @@
         android:textSize="24sp"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="normal|bold"
+        android:layout_marginTop="52dp"
         android:layout_below="@+id/foulAuto"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/numberOfCubesSwitchAuto"
