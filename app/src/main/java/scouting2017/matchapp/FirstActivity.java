@@ -98,7 +98,7 @@ public class FirstActivity extends AppCompatActivity {
                 eventNameText.setText("Bryant");
             } else if ((currentTimeInMillis >= sdf.parse("Mar 30 2018").getTime()) &&
                     (currentTimeInMillis < sdf.parse("Apr 9 2018").getTime() )) {
-                eventNameText.setText("UNH");
+                eventNameText.setText("BU");
             }  else {
                 eventNameText.setText("Worlds");
             }
